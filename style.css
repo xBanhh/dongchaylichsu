@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 .cover{
-    background: url(../images/bia1.jpg);
+    background-image: url('../images/bia1.jpg');
     min-height: 100vh;
     background-size: 100% 100%; 
     background-position: center;
