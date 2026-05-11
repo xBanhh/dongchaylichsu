@@ -4,7 +4,7 @@
 
 @font-face{
   font-family: 'ThuPhap';
-  src: url('../font/ThuPhap.otf') format('opentype');
+  src: url(font/ThuPhap.otf) format('opentype');
 }
 body {
     margin:0;
