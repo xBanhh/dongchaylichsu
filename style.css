@@ -2,7 +2,7 @@
 
 @font-face{
   font-family: 'ThuPhap';
-  src: url(font/ThuPhap.otf) format('opentype');
+  src: url('./font/ThuPhap.otf') format('opentype');
 }
 body {
     margin:0;
@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 .cover{
-    background-image: url('../images/bia1.jpg');
+    background-image: url("./images/bia1.jpg");
     min-height: 100vh;
     background-size: 100% 100%; 
     background-position: center;
