@@ -7,12 +7,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display: block;
 }
 
 #book {
@@ -44,25 +52,47 @@ body {
   z-index: 2;
 }
 
-#page1 {
-  background-image: url("./images/bia1.jpg");
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#cover{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resize-cover{
+    width:450px;
+}
+.resize-floating{
+    position:absolute;
+    width:150px;
+    opacity:0;
+    animation: fadeIn 3s ease forwards;
+    animation-delay: 2s;
+}
+.resize-floating:nth-child(2){
+    top: 1%;
+    left: 15%;
+}
+.resize-floating:nth-child(3){
+    top: 70%;
+    left: 55%;
 }
 
 .book-name {
-  font-family: 'ThuPhap';
-  font-size: 55px;
-  font-weight: bolder;
-  text-align: center;
-  transform: translateY(-10px);
-  color: rgba(235, 204, 0, 0.901);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  animation: fadeIn 2.5s ease forwards;
-  animation-delay: 1s;
+    position:absolute;
+    transform: translateY(-5px);
+    font-family: 'ThuPhap';
+    font-size: 30px;
+    width:fit-content;
+    font-weight: bolder;
+    text-align: center;
+    color: rgba(235, 204, 0, 0.901);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    animation: fadeIn 2.5s ease forwards;
+    animation-delay: 1s;
 }
 
 @keyframes fadeIn {
