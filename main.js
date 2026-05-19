@@ -5,7 +5,6 @@ let busy = false;
 let introDone = false;
 document.getElementById('totalNum').textContent = total;
 
-
 setTimeout(() => {
     introDone = true;
 }, 3500);
