@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'ThuPhap';
+  src: url('./font/ThuPhap.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SVN';
+  src: url('./font/SVN.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: grey;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: opacity 0.8s ease;
+}
+
+#cover.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.resize-cover {
+  position: relative;
+  width: 420px;
+  cursor: pointer;
+}
+
+.book-name {
+  position: absolute;
+  top: 46%;
+  right: 85px;
+  font-family: 'ThuPhap';
+  font-size: 27px;
+  font-weight: bolder;
+  text-align: center;
+  color: rgba(235, 204, 0, 0.901);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  animation: fadeIn 2.5s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.floating,
+.floating2 {
+  position: absolute;
+  opacity: 0;
+}
+
+.floating {
+  top: 15%;
+  left: 50%;
+  width: 130px;
+  animation: fadeIn 3s ease forwards, float 9s ease-in-out infinite alternate;
+  animation-delay: 2s, 1s;
+}
+
+.floating2 {
+  top: 1%;
+  left: 19%;
+  width: 180px;
+  animation: fadeIn 3s ease forwards, float2 9s ease-in-out infinite alternate;
+  animation-delay: 3s, 1s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+@keyframes float2 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+
+  50% {
+    transform: translateY(5px) rotate(0deg);
+  }
+}
+
+#intro-text {
+  position: absolute;
+  top: 30%;
+  left: 1%;
+}
+
+.i1 {
+  font-family: 'SVN';
+  font-size: 50px;
+  font-weight: 500;
+  width: 450px;
+}
+
+.black {
+  color: #222;
+}
+
+.to-gold {
+  animation: toGold 5s ease forwards;
+}
+
+@keyframes toGold {
+  from {
+    color: #222;
+    text-shadow: none;
+  }
+
+  to {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, .7), 0 0 20px rgba(255, 215, 0, .5);
+  }
+}
+
+#book {
+  perspective: 1500px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.page {
+  position: absolute;
+  transform-origin: bottom right;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  background-color: rgb(245, 230, 200);
+}
+
+.page.active {
+  z-index: 2;
+  opacity: 1;
+}
+
+.corner {
+  position: fixed;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 50;
+  cursor: pointer;
+  display: none;
+}
+
+.corner-left {
+  left: 0;
+  border-radius: 0 50% 0 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.corner-right {
+  right: 0;
+  border-radius: 50% 0 0 0;
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.1), transparent);
+}
+
+#pageNum {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  z-index: 50;
+  display: none;
+}
