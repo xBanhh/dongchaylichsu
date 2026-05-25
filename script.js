@@ -1,5 +1,34 @@
+//thg này gọi hết event
+document.addEventListener('DOMContentLoaded', function () {
+    initializeTypingEffect(); //đây là chữ nhập
+});
+
+function initializeTypingEffect() {
+    const element = document.querySelector('.i1');
+    if (!element) return;
+
+    const text = element.textContent;
+    element.innerHTML = '';
+    let i = 0;
+
+    function typeWriter() {
+        if (i <= text.length) {
+            let current = text.slice(0, i);
+            if (i >= text.length) {
+                current = current.replace("Dòng Chảy Lịch Sử", `<span class="black to-gold">Dòng Chảy Lịch Sử</span>`);
+            }
+            element.innerHTML = current;
+            i++;
+            setTimeout(typeWriter, 55); // tốc độ gõ (ms) = 0,055s 
+        }
+    }
+
+    setTimeout(typeWriter, 2500); //(ms) độ delay khi bắt đầu hiệu ứng = 5s
+}
+
+
 const cover = document.getElementById('cover');
-const book = document.getElementById('book');
+const book = document.getElementById('book-intro');
 const cornerLeft = document.getElementById('cornerLeft');
 const cornerRight = document.getElementById('cornerRight');
 const pageNum = document.getElementById('pageNum');
@@ -66,3 +95,24 @@ document.onkeydown = function (e) {
 pages[0].classList.add('active');   // Hiện trang đầu tiên có active được hiển thị
 pageNum.textContent = '1';
 cornerLeft.style.display = 'none';  // Trang đầu tiên - ẩn mũi tên trái
+
+//Nút biến mất khi ấn
+
+
+//ánh sáng hiệu ứng chuyển canhr mượt như sunsilk
+const btn = document.getElementById("discover-now-btn");
+const light = document.getElementById("bookLight");
+const main = document.getElementById("main-contents");
+btn.onclick = () => {
+    btn.classList.add("disappear");
+    light.classList.add("active");
+    
+    main.classList.add(
+    "show"
+);
+    setTimeout(()=>{
+
+    light.style.opacity = "0";
+        
+},1600);
+};
