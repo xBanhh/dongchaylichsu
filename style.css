@@ -37,8 +37,17 @@ img {
   z-index: 0;
 }
 
+#book-intro {
+  perspective: 1500px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
 #cover {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -46,9 +55,90 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.8s ease;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 420px;
+  height: 595px;
+  transition: transform 2s ease-in-out;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+}
+
+.front {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  background: white;
+}
+
+#page-cover {
+  z-index: 2;
+}
+
+#page-two {
   z-index: 1;
-  background-color: transparent;
+}
+
+#page-two .front,
+#page-two .back {
+  background: white;
+}
+
+#page-two.move {
+  animation: move 1s ease-in-out forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(35%);
+  }
+
+  100% {
+    transform: translateX(35%);
+  }
+}
+
+.page.flip {
+  animation: moveAndFlip 1s ease-in-out forwards;
+}
+
+@keyframes moveAndFlip {
+  0% {
+    transform: translateX(0) rotateY(0deg);
+  }
+
+  50% {
+    transform: translateX(35%) rotateY(0deg);
+  }
+
+  100% {
+    transform: translateX(35%) rotateY(-180deg);
+  }
 }
 
 #discover-now-btn {
@@ -79,11 +169,11 @@ img {
   z-index: 1;
 }
 
-#discover-now-btn.disappear{
+#discover-now-btn.disappear {
 
-    transform:scale(0);
+  transform: scale(0);
 
-    opacity:0;
+  opacity: 0;
 
 }
 
@@ -95,8 +185,9 @@ img {
 
 .resize-cover {
   position: relative;
-  width: 420px;
   cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
 
 .book-name {
@@ -172,6 +263,12 @@ img {
   left: 1%;
 }
 
+#intro-text.disappear {
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.7s ease;
+}
+
 .i1 {
   font-family: 'SVN';
   font-size: 50px;
@@ -199,35 +296,27 @@ img {
   }
 }
 
-#book-intro {
-  perspective: 1500px;
-  position: relative;
-  width: 100%;
-  height: 100%;
+#main-contents {
+
+  position: fixed;
+  inset: 0;
+  background: white;
+
   z-index: 5;
-  pointer-events:none;
-}
 
-#main-contents{
+  visibility: hidden;
 
-    position:fixed;
-    inset:0;
-    background:white;
+  pointer-events: none;
 
-    z-index:5;
-
-    visibility:hidden;
-
-    pointer-events:none;
-
-    transition:1.5s ease;
+  transition: 1.5s ease;
 
 }
-#main-contents.show{
+
+#main-contents.show {
   visibility: visible;
-    z-index: 40;
-    pointer-events: auto;
-    opacity: 1;
+  z-index: 40;
+  pointer-events: auto;
+  opacity: 1;
 }
 
 #bookLight {
@@ -273,58 +362,7 @@ img {
     width: 5000px;
     height: 5000px;
     opacity: 1;
-    background:white;
+    background: white;
     z-index: 25;
   }
-}
-
-
-.page {
-  position: absolute;
-  transform-origin: bottom right;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 1;
-  background-color: rgb(245, 230, 200);
-}
-
-.page.active {
-  z-index: 1;
-  opacity: 0;
-}
-
-.corner {
-  position: fixed;
-  bottom: 0;
-  width: 50px;
-  height: 50px;
-  z-index: 50;
-  cursor: pointer;
-  display: none;
-}
-
-.corner-left {
-  left: 0;
-  border-radius: 0 50% 0 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-}
-
-.corner-right {
-  right: 0;
-  border-radius: 50% 0 0 0;
-  background: linear-gradient(225deg, rgba(255, 255, 255, 0.1), transparent);
-}
-
-#pageNum {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  z-index: 50;
-  display: none;
 }
