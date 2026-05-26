@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeTypingEffect(); //đây là chữ nhập
 });
 
+
 function initializeTypingEffect() {
     const element = document.querySelector('.i1');
     if (!element) return;
@@ -42,11 +43,6 @@ btn.onclick = () => {
     // Chữ biến mất cùng lúc với nút
     btn.classList.add("disappear");
     introText.classList.add("disappear");
-
-    setTimeout(() => {
-        page.style.transition = 'transform 0.5s ease-in-out';
-        pageTwo.style.transition = 'transform 0.5s ease-in-out';
-    }, 300); // 500ms là thời gian để chữ và nút biến mất hoàn toàn
     setTimeout(() => {
         pageTwo.classList.add("move");
         page.classList.add("flip");
@@ -54,7 +50,11 @@ btn.onclick = () => {
 
     setTimeout(() => {
         light.classList.add("active");
-        main.classList.add("show");
         light.style.opacity = "0";
-    }, 1500);
+    }, 2000);
+    setTimeout(() => {
+            main.classList.add("show");
+        }, 4500);
 };
+// reload vẫn ở trang 2
+
