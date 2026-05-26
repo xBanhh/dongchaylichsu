@@ -114,10 +114,6 @@ img {
     transform: translateX(0);
   }
 
-  50% {
-    transform: translateX(35%);
-  }
-
   100% {
     transform: translateX(50%);
   }
@@ -130,10 +126,6 @@ img {
 @keyframes moveAndFlip {
   0% {
     transform: translateX(0) rotateY(0deg);
-  }
-
-  50% {
-    transform: translateX(35%) rotateY(0deg);
   }
 
   100% {
