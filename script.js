@@ -1,8 +1,35 @@
 //thg này gọi hết event
 document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.hash === '#main-page') {
+        showPage2Instantly();
+    } else {
+        // Nếu không có, mặc định tải trang 1 (Reset URL cho sạch)
+        history.replaceState(null, "", " ");
+
+    document.body.classList.add("lock");
     initializeTypingEffect(); //đây là chữ nhập
+}
 });
 
+
+function initializeTypingEffect() {
+    const element = document.querySelector('.i1');
+    if (!element) return;
+
+    const text = element.textContent;
+    element.textContent = '';
+    let i = 0;
+
+    const typeWriter = () => {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 80);
+        }
+    };
+
+    setTimeout(typeWriter, 1000);
+}
 
 function initializeTypingEffect() {
     const element = document.querySelector('.i1');
@@ -40,6 +67,7 @@ const main = document.getElementById("main-contents");
 const pageTwo = document.getElementById("page-two");
 
 btn.onclick = () => {
+    history.pushState(null, "", "#main-page");
     // Chữ biến mất cùng lúc với nút
     btn.classList.add("disappear");
     introText.classList.add("disappear");
@@ -55,6 +83,52 @@ btn.onclick = () => {
     setTimeout(() => {
             main.classList.add("show");
         }, 4500);
+    setTimeout(() => {
+        document.body.classList.remove("lock");
+        document.body.classList.add("reading");
+        }, 5000);
+
 };
 // reload vẫn ở trang 2
+
+window.addEventListener('popstate', function () {
+    if (window.location.hash === '#main-page') {
+        // Forward tới trang 2
+        showPage2Instantly();
+    } else {
+        // Back về trang 1
+        showPage1Instantly();
+    }
+});
+
+// Hàm 1: Tua nhanh trạng thái đến Trang 2 (Dành cho Reload / Forward)
+function showPage2Instantly() {
+    btn.classList.add("disappear");
+    introText.classList.add("disappear");
+    pageTwo.classList.add("move");
+    page.classList.add("flip");
+    
+    main.classList.add("show");
+    document.body.classList.remove("lock");
+    document.body.classList.add("reading");
+    
+    bookIntro.style.display = "none"; // Ẩn trang 1 đi
+}
+
+// Hàm 2: Tua nhanh trạng thái về Trang 1 (Dành cho nút Back)
+function showPage1Instantly() {
+    bookIntro.style.display = "block"; // Hiện lại trang 1
+    
+    // Gỡ bỏ toàn bộ các class hiệu ứng để sách trở về ban đầu
+    btn.classList.remove("disappear");
+    introText.classList.remove("disappear");
+    pageTwo.classList.remove("move");
+    page.classList.remove("flip");
+    light.classList.remove("active");
+    main.classList.remove("show");
+    
+    // Trả lại khóa thanh cuộn
+    document.body.classList.add("lock");
+    document.body.classList.remove("reading");
+}
 

@@ -8,16 +8,30 @@
   src: url('./font/SVN.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'DocLap';
+  src: url('./font/DocLap.otf') format('opentype');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 body {
   width: 100vw;
   height: 100vh;
+}
+
+body.lock {
   overflow: hidden;
+}
+
+body.reading {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 img {
@@ -43,7 +57,7 @@ img {
   width: 100%;
   height: 100%;
   z-index: 1;
-  
+  overflow: hidden;
 }
 
 #cover {
@@ -114,6 +128,8 @@ img {
     transform: translateX(0);
   }
 
+
+
   100% {
     transform: translateX(50%);
   }
@@ -127,6 +143,8 @@ img {
   0% {
     transform: translateX(0) rotateY(0deg);
   }
+
+
 
   100% {
     transform: translateX(50%) rotateY(-180deg);
@@ -162,7 +180,7 @@ img {
 }
 
 #discover-now-btn.disappear {
-  transform:scale(0);
+  transform: scale(0);
   opacity: 0;
 
 }
@@ -256,7 +274,7 @@ img {
 #intro-text.disappear {
   transform: scale(0);
   opacity: 0;
-  transition:  0.7s ease;
+  transition: 0.7s ease;
 }
 
 .i1 {
@@ -286,25 +304,7 @@ img {
   }
 }
 
-#main-contents {
 
-  position: fixed;
-  inset: 0;
-  background: white;
-  opacity:0;
-  z-index: -1;
-
-  pointer-events: none;
-
-  transition: opacity 1.5s ease;
-
-}
-
-#main-contents.show {
-  z-index: 40;
-  pointer-events: auto;
-  opacity: 1;
-}
 
 #bookLight {
   position: fixed;
@@ -316,7 +316,7 @@ img {
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1));
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8));
   filter: blur(10px);
 }
 
@@ -348,7 +348,7 @@ img {
     width: 5000px;
     height: 5000px;
     opacity: 1;
-    background:white;
+
   }
 }
 
@@ -358,6 +358,67 @@ img {
 /*TRANG CHÍNH*/
 
 
-#main-contents{
-  overflow-y: auto;
+#main-contents {
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  opacity: 0;
 }
+
+.main-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.main-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+
+#main-contents.show {
+  opacity: 1;
+  z-index: 1;
+}
+
+#main-contents.show .main-bg img {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(143, 93, 61, 0.86);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 214, 161);
+  border-radius: 10px;
+}
+
+.introduction {
+  font-family: 'DocLap';
+  font-size: 55px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity:0;
+}
+.intro-main{
+  opacity:0;
+}
+#main-contents.show .introduction {
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 2s; /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
+}
+#main-contents.show .intro-main {
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 3.5s; /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
+}
+
