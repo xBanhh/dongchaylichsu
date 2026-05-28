@@ -84,12 +84,16 @@ btn.onclick = () => {
             main.classList.add("show");
         }, 4500);
     setTimeout(() => {
+        const actionMenu = document.querySelector('.action-menu');
+        actionMenu.classList.add("show");
+    }, 6000);
+    setTimeout(() => {
         document.body.classList.remove("lock");
         document.body.classList.add("reading");
         }, 5000);
 
 };
-// reload vẫn ở trang 2
+
 
 window.addEventListener('popstate', function () {
     if (window.location.hash === '#main-page') {
