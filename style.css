@@ -14,15 +14,25 @@
   font-family: 'UTM';
   src: url('./font/UTM-Brushtip-C.otf') format('opentype');
 }
+@font-face {
+  font-family: 'ThuPhapTA';
+  src: url('./font/UTM-ThuPhap-ThienAn.otf') format('opentype');
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+
+}
 
 body {
-  width: 100vw;
+  max-width: 100%;
   height: 100vh;
+  
 }
 
 body.lock {
@@ -31,7 +41,7 @@ body.lock {
 
 body.reading {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 img {
@@ -60,9 +70,9 @@ img {
   overflow: hidden;
 }
 body:has(#main-contents.show) #book-intro{
-    opacity:0;
-    pointer-events:none;
-    transition: opacity 5s ease;
+  opacity:0;
+  pointer-events:none;
+  transition: opacity 5s ease;
 }
 #cover {
   position: absolute;
@@ -131,9 +141,6 @@ body:has(#main-contents.show) #book-intro{
   0% {
     transform: translateX(0);
   }
-
-
-
   100% {
     transform: translateX(50%);
   }
@@ -358,7 +365,9 @@ body:has(#main-contents.show) #book-intro{
 
 
 
-/*TRANG CHÍNH*/
+/*=================================================================================
+                                  TRANG CHÍNH
+====================================================================================*/
 
 
 #main-contents {
@@ -406,15 +415,19 @@ body:has(#main-contents.show) #book-intro{
 }
 
 .introduction {
-  font-family: 'DocLap';
-  font-size: 55px;
-  font-weight: 600;
+  scroll-snap-align: end;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity:0;
   margin-top:25px;
+  width:fit-content;
+}
+.introduction p{
+  font-family: 'DocLap';
+  font-size: 55px;
+  font-weight: 600;
 }
 .sub-intro{
   opacity:0;
@@ -426,7 +439,7 @@ body:has(#main-contents.show) #book-intro{
 .sub-intro p{
   font-family:sans-serif;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 100;
   text-indent: 40px;
   margin-bottom: 20px;
   width:90%;
@@ -439,8 +452,9 @@ body:has(#main-contents.show) #book-intro{
   animation: fadeIn 2s ease forwards;
   animation-delay: 2s; /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
 }
+
 #main-contents.show .sub-intro {
-  animation: fadeIn 2s ease forwards;
+  animation: fadeIn 1s ease forwards;
   animation-delay: 3.5s; /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
 }
 
@@ -464,7 +478,7 @@ body:has(#main-contents.show) .action-menu{
   background: #d4a853;
   z-index: 1; 
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
   cursor: pointer;
   box-shadow: 0 15px 35px rgba(74, 74, 74, 0.4);
 }
@@ -494,9 +508,8 @@ body:has(#main-contents.show) .action-menu{
   transform-origin: center;
 }
 .action-menu.active ~ #main-contents.show{
-  filter: blur(1.9px);
-  opacity: 0.5;
-  transition:  filter 0.3s, opacity 0.5s;
+  opacity: 0.3;
+  transition: 0.3s;
 }
 .action-menu.active .line:nth-child(1) { 
   transform: translateY(7px) rotate(45deg);
@@ -579,3 +592,36 @@ body:has(#main-contents.show) .action-menu{
   border-radius: 50%; 
   display: block;
 }
+
+
+.hero-card{
+  min-height:100vh;
+  position:relative;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-img{
+  position:absolute;
+  z-index: 2;
+  animation: moveLeft 2s ease-in-out forwards;
+  animation-delay: 10s;
+}
+.name-1{
+  font-family: 'ThuPhapTA';
+  font-weight: 300;
+  font-size: 50px;
+  z-index: 1;
+  left:50%;
+}
+@keyframes moveLeft{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(-100%);
+  }
+}
+
