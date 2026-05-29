@@ -496,7 +496,7 @@ body:has(#main-contents.show) .action-menu{
 .action-menu.active ~ #main-contents.show{
   filter: blur(1.9px);
   opacity: 0.5;
-  transition: 0.3s;
+  transition:  filter 0.3s, opacity 0.5s;
 }
 .action-menu.active .line:nth-child(1) { 
   transform: translateY(7px) rotate(45deg);
