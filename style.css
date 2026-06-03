@@ -23,16 +23,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-
-}
 
 body {
   max-width: 100%;
   height: 100vh;
-  
+  overflow: hidden;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 body.lock {
@@ -375,6 +374,10 @@ body:has(#main-contents.show) #book-intro{
   inset: 0;
   min-height: 100vh;
   opacity: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: normal;
 }
 
 .main-bg {
@@ -457,6 +460,287 @@ body:has(#main-contents.show) #book-intro{
   animation: fadeIn 1s ease forwards;
   animation-delay: 3.5s; /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
 }
+
+.generals-container  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 0px 0 50px 0;
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.general-card {
+  opacity:0;
+    width:250px; 
+    height:500px;
+    background:rgba(30,20,10,0.75);
+    border:1px solid rgba(212,168,83,0.25);
+    border-radius:10px; 
+    text-align:center;
+    overflow:hidden; 
+    position:relative;
+    transition:transform 0.4s ease, box-shadow 0.4s ease,
+                background 0.4s ease, border-color 0.4s ease;
+    cursor:pointer;
+}
+
+.general-card:hover {
+  transform: translateY(-12px) !important;
+  background: rgb(0, 0, 0);
+  border: 1px solid rgba(190, 20, 20, 0.6);
+  box-shadow: 0 8px 16px 10px rgba(190, 20, 20, 0.6);
+}
+
+.general-card img {
+  width: 100%; 
+  height: 80%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.general-card:hover img { transform: scale(1.05); }
+
+.general-card h2 {
+  color: rgb(176, 138, 78);
+  font-size: 30px;
+  margin: 14px 0;
+  transition: color 0.5s;
+}
+.general-card:hover h2 { color: #ffbf00; }
+
+.general-card p {
+  color: #e8dcc8;
+  font-size: 18px;
+  padding: 0 10px;
+  transition: color 0.5s;
+}
+.general-card:hover p { color: #f0e68c; }
+
+.legend-intro {
+  padding: 100px 40px;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  scroll-snap-align: center;
+}
+
+.legend-intro-content { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 28px; 
+  
+}
+
+.legend-line {
+  line-height: 1.85;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  transform: translateY(25px);
+  opacity: 0;
+}
+
+.chapter-divider{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+}
+
+.chapter-number{
+    display: block;
+    margin-top: 15px;
+    font-size: 17px;
+    letter-spacing: 8px;
+    color:#8b949e;
+}
+
+.chapter-divider h2{
+    margin-top: 20px;
+    font-size: 70px;
+    letter-spacing:6px;
+    color:#2b1d0e;
+}
+
+.chapter-divider{
+    text-align:center;
+}
+
+.decorate{
+    position:relative;
+    font-size:24px;
+    color:#b08a4e;
+}
+
+.decorate::before,
+.decorate::after{
+    content:'';
+    position:absolute;
+    top:50%;
+    width:120px;
+    height:1px;
+    background:#b08a4e;
+}
+
+.decorate::before{
+    right:40px;
+}
+
+.decorate::after{
+    left:40px;
+}
+
+.highlight{
+    font-weight: 600;
+}
+
+.card, .life-story, .battles, .talent, .worship {
+  display: flex;
+  align-items: center;
+  scroll-snap-align: center;
+  min-height: 100vh;
+}
+
+#tranhungdao {
+  margin: 50px 20px;
+}
+
+.card {
+  justify-content: center;
+}
+
+.img {
+    height: 600px;
+    width: 300px;
+    opacity: 0;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;  
+}
+
+.info {
+    opacity: 0;
+}
+
+.name {
+    font-family: 'ThuPhap';
+    font-size: 70px;
+    color: #d4a853;
+    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
+    margin-bottom: 15px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.birth {
+    font-family: 'SVN';
+    font-size: 28px;
+    color: #8b949e;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.life-story {
+  justify-content: space-between;
+}
+
+.life-story p {
+  font-size: 24px;
+  line-height: 1.8;
+  color: #2b1d0e;
+}
+
+.life-story .img {
+  width: 600px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.victory-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.victory-story p {
+  font-size: 24px;
+  line-height: 1.8;
+  color: #2b1d0e;
+}
+
+.battles {
+  gap: 50px;
+}
+
+.battles-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.battles img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.talent {
+  gap: 50px;
+}
+
+.talent img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.worship {
+  gap: 50px;
+}
+
+.worship img {
+  width: 500px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.worship-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.endcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.endcontent blockquote{
+    width: 70%;
+    text-align: center;
+    font-size: 42px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #2b1d0e;
+}
+
 
 .action-menu {
   position: fixed;
@@ -592,36 +876,3 @@ body:has(#main-contents.show) .action-menu{
   border-radius: 50%; 
   display: block;
 }
-
-
-.hero-card{
-  min-height:100vh;
-  position:relative;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-img{
-  position:absolute;
-  z-index: 2;
-  animation: moveLeft 2s ease-in-out forwards;
-  animation-delay: 10s;
-}
-.name-1{
-  font-family: 'ThuPhapTA';
-  font-weight: 300;
-  font-size: 50px;
-  z-index: 1;
-  left:50%;
-}
-@keyframes moveLeft{
-  0%{
-    transform:translateX(0);
-  }
-  100%{
-    transform:translateX(-100%);
-  }
-}
-
