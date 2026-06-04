@@ -27,7 +27,6 @@
 body {
   max-width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 
 html{
@@ -314,8 +313,6 @@ body:has(#main-contents.show) #book-intro{
   }
 }
 
-
-
 #bookLight {
   position: fixed;
   top: 50%;
@@ -374,10 +371,7 @@ body:has(#main-contents.show) #book-intro{
   inset: 0;
   min-height: 100vh;
   opacity: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-snap-stop: normal;
+
 }
 
 .main-bg {
@@ -397,7 +391,8 @@ body:has(#main-contents.show) #book-intro{
 #main-contents.show {
   opacity: 1;
   z-index: 1;
-  transition: 0.5s
+  transition: 0.5s;
+
 }
 
 #main-contents.show .main-bg img {
@@ -472,15 +467,14 @@ body:has(#main-contents.show) #book-intro{
 }
 
 .general-card {
-  opacity:0;
     width:250px; 
     height:500px;
     background:rgba(30,20,10,0.75);
     border:1px solid rgba(212,168,83,0.25);
     border-radius:10px; 
     text-align:center;
-    overflow:hidden; 
     position:relative;
+    overflow: hidden;
     transition:transform 0.4s ease, box-shadow 0.4s ease,
                 background 0.4s ease, border-color 0.4s ease;
     cursor:pointer;
@@ -503,19 +497,14 @@ body:has(#main-contents.show) #book-intro{
 
 .general-card h2 {
   color: rgb(176, 138, 78);
-  font-size: 30px;
-  margin: 14px 0;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: color 0.5s;
+  font-family: 'ThuPhapTA';
 }
 .general-card:hover h2 { color: #ffbf00; }
-
-.general-card p {
-  color: #e8dcc8;
-  font-size: 18px;
-  padding: 0 10px;
-  transition: color 0.5s;
-}
-.general-card:hover p { color: #f0e68c; }
 
 .legend-intro {
   padding: 100px 40px;
@@ -537,7 +526,6 @@ body:has(#main-contents.show) #book-intro{
   color: rgb(0, 0, 0);
   font-size: 30px;
   transform: translateY(25px);
-  opacity: 0;
 }
 
 .chapter-divider{
@@ -596,40 +584,44 @@ body:has(#main-contents.show) #book-intro{
     font-weight: 600;
 }
 
-.card, .life-story, .battles, .talent, .worship {
-  display: flex;
-  align-items: center;
-  scroll-snap-align: center;
-  min-height: 100vh;
-}
-
-#tranhungdao {
+.hero {
   margin: 50px 20px;
 }
 
-.card {
-  justify-content: center;
+.nq-card, .nq-life-story, .nq-enemy, .nq-content-talent, .nq-achievement, .nq-worship,
+.dbl-card, .dbl-life-story, .dbl-enemy, .dbl-content-talent, .dbl-achievement, .dbl-worship,
+.thd-card, .thd-life-story, .thd-enemy, .thd-content-talent, .thd-achievement, .thd-worship,
+.qt-card, .qt-life-story, .qt-enemy, .qt-content-talent, .qt-achievement, .qt-worship  {
+  display: flex;
+  align-items: center;
 }
 
-.img {
+#ngoquyen, #dinhbolinh, #tranhungdao, #nguyenhue {
+  margin: 50px 0;
+}
+
+#ngoquyen p, #dinhbolinh p, #tranhungdao p, #nguyenhue p {
+  font-size: 27px;
+  line-height: 1.5;
+} 
+
+.nq-card {
+  justify-content: space-around;
+}
+
+.nq-img {
     height: 600px;
     width: 300px;
-    opacity: 0;
 }
 
-.img img {
+.nq-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;  
 }
 
-.info {
-    opacity: 0;
-}
-
-.name {
-    font-family: 'ThuPhap';
+.nq-name {
+    font-family: 'ThuPhapTA';
     font-size: 70px;
     color: #d4a853;
     text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
@@ -638,50 +630,52 @@ body:has(#main-contents.show) #book-intro{
     text-align: center;
 }
 
-.birth {
+.nq-birth {
     font-family: 'SVN';
-    font-size: 28px;
+    font-size: 30px;
     color: #8b949e;
     letter-spacing: 3px;
     text-align: center;
 }
 
-.life-story {
+.nq-life-story {
   justify-content: space-between;
+
 }
 
-.life-story p {
-  font-size: 24px;
-  line-height: 1.8;
-  color: #2b1d0e;
-}
-
-.life-story .img {
-  width: 600px;
-  height: 700px;
+.nq-life-story img {
+  width: 650px;
+  height: 600px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-
-.victory-story {
+.nq-victory-story {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.victory-story p {
-  font-size: 24px;
-  line-height: 1.8;
-  color: #2b1d0e;
-}
-
-.battles {
+.nq-enemy {
+  justify-content: center;
   gap: 50px;
 }
 
-.battles-info {
+.nq-enemy img {
+  width: 650px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.nq-battles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.nq-battles-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -689,41 +683,68 @@ body:has(#main-contents.show) #book-intro{
   gap: 50px;
 }
 
-.battles img {
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
+.nq-battles-info h2 {
+  font-size: 50px;
 }
 
-.talent {
-  gap: 50px;
-}
-
-.talent img {
+.nq-battles img {
   width: 600px;
   height: 600px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-.worship {
+.nq-talent {
   gap: 50px;
 }
 
-.worship img {
-  width: 500px;
+.nq-content-talent {
+  justify-content: center;
+  gap: 20px;
+}
+
+.nq-content-talent img {
+  width: 600px;
+  height: 600px;
+}
+
+.nq-achievement {
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.nq-achievement img {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.nq-worship {
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.nq-worship img {
+  width: 600px;
   height: 600px;
   object-fit: cover;
-  border-radius: 10px;
 }
-.worship-img {
+.nq-worship-img {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 50px;
 }
-.endcontent {
+
+.nq-content-worship {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nq-endcontent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -732,7 +753,7 @@ body:has(#main-contents.show) #book-intro{
   scroll-snap-align: center;
 }
 
-.endcontent blockquote{
+.nq-endcontent blockquote{
     width: 70%;
     text-align: center;
     font-size: 42px;
@@ -741,6 +762,470 @@ body:has(#main-contents.show) #book-intro{
     color: #2b1d0e;
 }
 
+.dbl-card {
+  justify-content: space-around;
+}
+
+.dbl-img {
+    height: 600px;
+    width: 300px;
+}
+
+.dbl-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dbl-name {
+    font-family: 'ThuPhapTA';
+    font-size: 70px;
+    color: #d4a853;
+    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
+    margin-bottom: 15px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.dbl-birth {
+    font-family: 'SVN';
+    font-size: 30px;
+    color: #8b949e;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.dbl-life-story {
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dbl-life-story img {
+  width: 900px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.dbl-victory-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dbl-enemy {
+  justify-content: center;
+  gap: 50px;
+}
+
+.dbl-enemy img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.dbl-battles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.dbl-battles-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.dbl-battles-info h2 {
+  font-size: 50px;
+}
+
+.dbl-battles img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.dbl-talent {
+  gap: 50px;
+}
+
+.dbl-content-talent {
+  justify-content: center;
+  gap: 20px;
+}
+
+.dbl-content-talent img {
+  width: 700px;
+  height: 600px;
+}
+
+.dbl-achievement {
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.dbl-achievement img {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.dbl-worship {
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.dbl-worship img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+.dbl-worship-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.dbl-content-worship {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dbl-endcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.dbl-endcontent blockquote{
+    width: 70%;
+    text-align: center;
+    font-size: 42px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #2b1d0e;
+}
+
+.thd-card {
+  justify-content: space-around;
+}
+
+.thd-img {
+    height: 600px;
+    width: 300px;
+}
+
+.thd-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thd-name {
+    font-family: 'ThuPhapTA';
+    font-size: 70px;
+    color: #d4a853;
+    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
+    margin-bottom: 15px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.thd-birth {
+    font-family: 'SVN';
+    font-size: 30px;
+    color: #8b949e;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.thd-life-story {
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.thd-life-story img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.thd-victory-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thd-enemy {
+  justify-content: center;
+  gap: 50px;
+}
+
+.thd-enemy img {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.thd-battles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.thd-battles-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.thd-battles-info h2 {
+  font-size: 50px;
+}
+
+.thd-battles img {
+  width: 800px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.thd-talent {
+  gap: 50px;
+}
+
+.thd-content-talent {
+  justify-content: center;
+  gap: 20px;
+}
+
+.thd-content-talent img {
+  width: 600px;
+  height: 600px;
+}
+
+.thd-achievement {
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.thd-achievement img {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.thd-worship {
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.thd-worship img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+.thd-worship-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.thd-endcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.thd-endcontent blockquote{
+    width: 70%;
+    text-align: center;
+    font-size: 42px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #2b1d0e;
+}
+
+.qt-card {
+  justify-content: space-around;
+}
+
+.qt-img {
+    height: 600px;
+    width: 300px;
+}
+
+.qt-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.qt-name {
+    font-family: 'ThuPhapTA';
+    font-size: 70px;
+    color: #d4a853;
+    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
+    margin-bottom: 15px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.qt-birth {
+    font-family: 'SVN';
+    font-size: 30px;
+    color: #8b949e;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.qt-life-story {
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.qt-life-story img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.qt-victory-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qt-enemy {
+  justify-content: center;
+  gap: 50px;
+}
+
+.qt-enemy img {
+  width: 800px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.qt-battles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.qt-battles-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qt-battles-info h2 {
+  font-size: 50px;
+}
+
+.qt-battles img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.qt-talent {
+  gap: 50px;
+}
+
+.qt-content-talent {
+  justify-content: center;
+  gap: 20px;
+}
+
+.qt-content-talent img {
+  width: 600px;
+  height: 600px;
+}
+
+.qt-achievement {
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+}
+
+.qt-achievement img {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.qt-worship {
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.qt-worship img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
+.qt-worship-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.qt-content-worship {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.qt-endcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.qt-endcontent blockquote{
+    width: 70%;
+    text-align: center;
+    font-size: 42px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #2b1d0e;
+}
 
 .action-menu {
   position: fixed;

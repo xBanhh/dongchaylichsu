@@ -132,7 +132,7 @@ document.querySelectorAll('.action-menu-btns .btn').forEach(btn => {
 /* =============================================================================================
                                         Gasp + ScrollTrigger                                    |
 ================================================================================================ */
-
+/*
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.defaults({
@@ -140,13 +140,13 @@ ScrollTrigger.defaults({
     toggleActions: 'play none none reverse',
 });
 //To là từ css đến gasp, from là từ gasp đến css
-gsap.to(".general-card", {
+gsap.from(".general-card", {
     scrollTrigger: {
             trigger: ".generals-container", //Phần tử kích hoạt
             start: "top 85%", //Chạm từ trên xuống 70% của màn hình
      //Chỉ chạy hiệu ứng một lần
         }, // Cấu hình ScrollTrigger
-        opacity: 1,
+        opacity: 0,
         y: 0,
         duration: 1.5, //Thời gian hiệu ứng
         delay: 1, //Độ trễ trước khi hiệu ứng bắt đầu
@@ -262,7 +262,7 @@ gsap.from(".endcontent blockquote", {
     duration:1.5,
     ease:"power3.out"
 });
-
+*/
 /* =============================================================================================
                                         Snap scroll                                             |
 ================================================================================================ */
