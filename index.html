@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dongchaylichsu</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -38,8 +37,7 @@
             <div class="back"></div>
         </div>
         <div id="intro-text">
-            <div class="i1">Chào Mừng Bạn Đến Với Dòng Chảy Lịch Sử Nơi dòng thời gian trôi đi nhưng còn mãi những chiến
-                công anh hùng ở lại </div>
+            <div class="i1">Chào Mừng Bạn Đến Với Dòng Chảy Lịch Sử Nơi dòng thời gian trôi đi nhưng còn mãi những chiến công anh hùng ở lại </div>
         </div>
         <div id="bookLight"></div>
     </div>
@@ -54,33 +52,35 @@
         </button>
 
         <div class="action-menu-btns">
-            <div class="btn" data-target="tranhungdao">
-                <span>Trần Hưng Đạo</span>
+            <div class="btn" onclick="location.href='#ngoquyen'">
+                <span>Ngô Quyền</span>
                 <button>
-                    <img src="image-albums/flags/conhatran.jpg" alt="Cờ nhà Trần">
+                    <img src="image-albums/flags/conhango.jpg" alt="Cờ nhà Ngô">
                 </button>
             </div>
 
-            <div class="btn" data-target="dinhbolinh">
+            <div class="btn" onclick="location.href='#dinhbolinh'">
                 <span>Đinh Bộ Lĩnh</span>
                 <button>
                     <img src="image-albums/flags/conhadinh.jpg" alt="Cờ nhà Đinh">
                 </button>
             </div>
 
-            <div class="btn" data-target="nguyenhue">
-                <span>Quang Trung</span>
+            <div class="btn" onclick="location.href='#tranhungdao'">
+                <span>Trần Hưng Đạo</span>
+                <button>
+                    <img src="image-albums/flags/conhatran.jpg" alt="Cờ nhà Trần">
+                </button>
+            </div>
+
+            <div class="btn" onclick="location.href='#nguyenhue'">
+                <span>Nguyễn Huệ</span>
                 <button>
                     <img src="image-albums/flags/cothoinguyen.jpg" alt="Cờ Tây Sơn">
                 </button>
             </div>
 
-            <div class="btn" data-target="ngoquyen">
-                <span>Ngô Quyền</span>
-                <button>
-                    <img src="image-albums/flags/conhango.jpg" alt="Cờ nhà Ngô">
-                </button>
-            </div>
+
         </div>
     </div>
 
@@ -107,426 +107,866 @@
                     hứng thú hơn về lịch sử bằng cách kết hợp những giá trị hiện đại và giá trị truyền thống để đúc kết
                     lên <span>Dòng Chảy Lịch Sử</span></p>
                 <p>Chúng tôi đã sưu tầm được một số những danh tướng tiêu biểu trong lịch sử Việt Nam thời kỳ phong kiến
-                    và dùng những ngôn ngữ gần gũi hiện đại nhất để kể lại, nếu có điều gì sai sót, xin hãy phản hồi,
+                    và dùng những ngôn ngữ gần gũi hiện đại nhất để kể lại, chúng tôi có sử dụng một số hình ảnh
+                    do AI nhằm tái hiện lịch sử dễ hình dung, nếu có điều gì sai sót, xin hãy phản hồi,
                     chúng tôi rất ghi nhận những đóng góp của quý độc giả!</p>
                 <p>Chúng tôi xin trân trọng cảm ơn!</p>
             </div>
         </section>
 
-        <div id="time-line">
-            làm ở đây đi nặc
-        </div>
+        <section id="timeline">
+            <div id="time-title">Dòng Thời Gian</div>
+            <div class="box-time left">
+                <div class="timeline-content moveRight" onclick="location.href='#ngoquyen'">
+                    <div class="inner-content">
+                        <h2>898 - 944</h2>
+                        <p>Ngô Quyền</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-time right" onclick="location.href='#dinhbolinh'">
+                <div class="timeline-content moveLeft">
+                    <div class="inner-content">
+                        <h2>924 - 979</h2>
+                        <p>Đinh Bộ Lĩnh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-time left" onclick="location.href='#tranhungdao'">
+                <div class="timeline-content moveRight">
+                    <div class="inner-content">
+                        <h2>1232 - 1300</h2>
+                        <p>Trần Hưng Đạo</p>
+                    </div>
 
-        <section class="generals-container">
-            <div class="general-card">
-                <img src="image-albums/heroes/tranhungdao.png" alt="Trần Hưng Đạo">
-                <h2>Trần Hưng Đạo</h2>
+                </div>
             </div>
-            <div class="general-card">
-                <img src="image-albums/heroes/dinhbolinh.png" alt="Đinh Bộ Lĩnh">
-                <h2>Đinh Bộ Lĩnh</h2>
+            <div class="box-time right" onclick="location.href='#nguyenhue'">
+                <div class="timeline-content moveLeft">
+                    <div class="inner-content">
+                        <h2>1753 - 1792</h2>
+                        <p>Nguyễn Huệ</p>
+                    </div>
+                </div>
             </div>
-            <div class="general-card">
-                <img src="image-albums/heroes/nguyenhue.png" alt="Nguyễn Huệ">
-                <h2>Nguyễn Huệ</h2>
-            </div>
-            <div class="general-card">
-                <img src="image-albums/heroes/ngoquyen.png" alt="Ngô Quyền">
-                <h2>Ngô Quyền</h2>
-            </div>
-        </section>    
+        </section>
+
+        <section class="generals-container gap50">
+            <a class="moveLeft" href="#ngoquyen">
+                <div class="inner-card ">
+                    <img src="image-albums/heroes/ngoquyen.png" alt="Ngô Quyền">
+                    <h2>Ngô Quyền</h2>
+                    <div class="hero-desc">
+                        Đánh tan quân <span class="crimson">Nam Hán</span> trên <span class="river">sông Bạch
+                            Đằng</span>, chấm dứt hơn 1000 năm Bắc thuộc mở ra kỷ nguyên độc lập lâu dài của dân tộc
+                    </div>
+                </div>
+            </a>
+
+            <a class="moveRight" href="#dinhbolinh">
+                <div class="inner-card ">
+                    <img src="image-albums/heroes/dinhbolinh.png" alt="Đinh Bộ Lĩnh">
+                    <h2>Đinh Bộ Lĩnh</h2>
+                    <div class="hero-desc">
+                        Dẹp loạn <span class="crimson">12 sứ quân</span>, thống nhất đất nước, khai sinh <span
+                            class="copper-gold">triều Đinh</span> – triều đại phong kiến độc lập đầu tiên của Việt Nam.
+                    </div>
+                </div>
+            </a>
+
+            <a class="moveLeft" href="#tranhungdao">
+                <div class="inner-card">
+                    <img src="image-albums/heroes/tranhungdao.png" alt="Trần Hưng Đạo">
+                    <h2>Trần Hưng Đạo</h2>
+                    <div class="hero-desc">
+                        <span class="gold">Đức Thánh Trần</span>, lãnh đạo Đại Việt ba lần đánh bại quân <span
+                            class="crimson">Nguyên Mông</span>.
+                    </div>
+                </div>
+            </a>
+
+            <a class="moveRight" href="#nguyenhue">
+                <div class="inner-card ">
+                    <img src="image-albums/heroes/nguyenhue.png" alt="Nguyễn Huệ">
+                    <h2>Nguyễn Huệ</h2>
+                    <div class="hero-desc">
+                        <span class="brown">Anh hùng áo vải</span> - người khiến quân <span class="crimson">Xiêm</span>
+                        và quân <span class="crimson">Thanh</span> đại bại, làm rạng danh Đại Việt.
+                    </div>
+                </div>
+            </a>
+        </section>
 
 
         <section class="legend-intro">
             <div class="legend-intro-content">
-                <p class="legend-line">Mỗi vị tướng là một chương sử</p>
-                <p class="legend-line">Mỗi chiến thắng là cái giá của máu, ý chí và lòng yêu nước</p>
-                <p class="legend-line">Mỗi trận chiến là sự hy sinh của hàng vạn con người chỉ đổi lấy hai chữ "Tự Do"</p>
-                <p class="legend-line">Hãy bước vào những trang sử hào hùng của dân tộc Việt Nam</p>
+                <p class="legend-line fadeI">Mỗi vị tướng là một chương sử</p>
+                <p class="legend-line fadeI">Mỗi chiến thắng là cái giá của máu, ý chí và lòng yêu nước</p>
+                <p class="legend-line fadeI">Mỗi trận chiến là sự hy sinh của hàng vạn con người chỉ đổi lấy hai chữ "Tự
+                    Do"</p>
+                <p class="legend-line fadeI">Hãy bước vào những trang sử hào hùng của dân tộc Việt Nam</p>
             </div>
         </section>
 
-        <div class="hero">
+        <div class="hero d-flex-col gap100">
             <section id="ngoquyen">
-                <div class="nq-card">
-                    <div class="nq-img">
+                <div class="hero-card d-flex stick-scroll">
+                    <div class="hero-img moveLeft">
                         <img src="image-albums/heroes/ngoquyen.png" alt="Ngô Quyền">
                     </div>
 
-                    <div class="nq-info">
-                        <h1 class="nq-name">Ngô Quyền</h1>
-                        <p class="nq-birth">898 - 944</p>
-                    </div>    
-                </div>
-
-                <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG I</span>
-                    <h2>TIỂU SỬ VÀ SỰ NGHIỆP</h2>
-                </div>
-
-                <div class="nq-life-story">
-                    <div>                  
-                        <p>Sinh ra trong một gia đình có thế lực ở Đường Lâm. Từ nhỏ nổi tiếng thông minh, cương nghị và có chí lớn</p>
-                        <p>Trưởng thành dưới quyền Dương Đình Nghệ, nhanh chóng trở thành vị tướng tài năng, được tin cậy giao nhiều trọng trách</p>
-                    </div>
-                        
-                    <div>
-                        <img src="image-albums/life-NQ/youngNQ.jpg" alt="Ngô Quyền thời trẻ">
+                    <div class="hero-info center d-flex-col">
+                        <h1 class="hero-name">Ngô Quyền</h1>
+                        <p class="birth-death">898 - 944</p>
                     </div>
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG II</span>
-                    <h2>CHIẾN CÔNG</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">Giới thiệu</h2>
                 </div>
 
-                <div class="nq-victory-story">
-                    <div class="nq-enemy">
-                        <div>
-                            <p>Năm 937, Kiều Công Tiễn phản bội giết chủ, cầu cứu nhà Nam Hán, đẩy đất nước vào thế ngàn cân treo sợi tóc</p>
-                            <p>Đối mặt với quân Nam Hán - một thế lực phong kiến hùng mạnh ở phương Bắc, có lực lượng thủy quân đông đảo và giàu kinh nghiệm chiến đấu</p>             
-                            <p>Trước thời khắc hiểm nghèo, <span class="highlight">ông không lùi bước, ông không chọn sức mạnh, ông chọn trí tuệ</span></p>
-                            <p>Những hàng cọp gỗ bịt sắt được bí mật đóng xuống lòng sông theo quy luật Thủy Triều, một kế sách giản dị đã chấm dứt 1000 năm đô hộ Phương Bắc</p>
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI">
+                            <p class="intro-hero">
+                                Nhắc đến Ngô Quyền là chúng ta nhớ đến ngay đến bãi cọc Bạch Đằng siêu to khổng lồ đâm thủng chiến thuyền 
+                                quân Nam Hán, nhưng 10 người thì 9 người không biết nhiều về cuộc đời ông. Vậy nên chúng tôi ở đây để giúp
+                                bạn khắc phục điều đó!
+                            </p>
+                            <p>Ngô Quyền sinh ra trong một gia đình có thế lực ở Đường Lâm.</p>
+                            <p>
+                                Tương truyền, khi ông sinh ra, có ánh sáng lạ tỏa khắp nhà, tướng mạo khác thường, có ba nốt ruồi ở lưng. 
+                                Thầy tướng cho là lạ, bảo có thể làm chủ một phương, nên đã đặt tên là Quyền. Khi lớn lên, Ngô Quyền có 
+                                vẻ người khôi ngô, mắt sáng như chớp, dáng đi thong thả như hổ, có trí dũng và sức mạnh có thể nâng được 
+                                vạc bằng đồng. 
+                            </p>
                         </div>
-                        
-                        <div>
-                            <img src="image-albums/life-NQ/giacnamhan.jpg" alt="Giặc Nam Hán">
+                        <div class="width revealU">
+                            <img src="image-albums/life-NQ/nq-sinh.png" alt="Ngô Quyền thời trẻ">
                         </div>
-
-                        
                     </div>
 
-                    <div class="nq-battles">
-                        <div>
-                            <img src="image-albums/life-NQ/trandanhNQ.jpg" alt="Trận Bạch Đằng">
+                    <div class="d-flex stick-scroll">
+                        <div class="width">
+                            <img src="image-albums/life-NQ/nq-young.png" alt="Ngô Quyền thời trẻ">
                         </div>
-                            
-                        <div class="nq-battles-info">
-                            <h2>Trận Bạch Đằng (938)</h2>
-                            <p>Năm 938, quân Nam Hán tràn sang với lực lượng hùng hậu, khi thủy triều dâng cao, quân ta nhử quân Nam Hán tiến sâu vào cửa sông</p>
-                            <p>Đến lúc nước rút, thuyền địch mắc kẹt vào bãi cọc, đội hình rối loạn</p>
-                            <p>Quân ta từ nhiều phía tấn công quyết liệt, tiêu diệt phần lớn quân địch. Lưu Hoằng Tháo tử trận</p>
-                        </div>                       
+                        <div class="fadeI center d-flex-col">
+                            <p>Trưởng thành dưới quyền Dương Đình Nghệ, ông nhanh chóng trở thành vị tướng tài năng, được tin cậy giao nhiều trọng trách</p>
+                        </div>                      
                     </div>
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG III</span>
-                    <h2>THÀNH TỰU VÀ TƯ TƯỞNG</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">CHIẾN CÔNG</h2>
                 </div>
 
-                <div class="nq-talent">
-                    <div class="nq-content-talent">
-                        <div>
-                            <img src="image-albums/life-NQ/valueNQ.jpg" alt="Giá trị của Ngô Quyền để lại">
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex-col stick-scroll">
+                        <div class="fadeI">
+                            <p>Năm 937, Kiều Công Tiễn giở mưu hèn kế bẩn giết chết cha nuôi (Dương Đình Nghệ) để cướp
+                                ngôi Tiết độ sứ.
+                            </p>
                         </div>
+                        <div class="d-flex gap100 center">
+                            <div class="width moveRight">
+                                <img src="image-albums/life-NQ/kct-ddn.png">
+                            </div>
+                            <div class=" width2 moveLeft">
+                                <img src="image-albums/life-NQ/kct-king.png">
+                            </div>
+                        </div>
+                    </div>
 
-                        <div>
-                            <p>Khoảnh khắc ấy là tiếng sấm của lịch sử, hơn 1.000 năm Bắc thuộc sụp đổ, ông được xem là người mở đầu thời kỳ độc lập tự chủ lâu dài của dân tộc Việt Nam</p>
-                            <p>Đề cao trí tuệ quân sự, lấy mưu lược thắng sức mạnh</p>
-                            <p>Ông để lại cho hậu thế một chân lý không bao giờ cũ, khi ý chí đủ lớn, dân tộc nhỏ bé cũng có thể làm nên kỳ tích vĩ đại</p>
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Ngô Quyền khi ấy đang đóng quân ở vùng Ái Châu, nghe tin bố vợ bị thằng con nuôi cho đăng
+                                xuất khỏi thế giới. Không dài dòng, ông lập tức triệu tập anh em huynh đệ đi hành quân
+                                kéo sang hỏi tội Kiều Công Tiễn
+                            </p>
+                        </div>
+                        <div class="width moveLeft">
+                            <img src="image-albums/life-NQ/hanhquan.png">
                         </div>
                     </div>
                     
-                    <div class="nq-achievement">
-                        <div>
-                            <p>Năm 939, Ngô Quyền lên ngôi vương, đóng đô ở Cổ Loa, đặt nền móng cho nhà nước tự chủ lâu dài. Dù thời gian trị bị không dài, nhưng công lao của ông là vĩnh cử</p>
-                            <p>Ông không chỉ đánh thắng một đạo quân, ông đánh thức niềm tin của cả một dân tộc rằng <span class="highlight">người Việt hoàn toàn có thể làm chủ vận mệnh của mình</span></p>
+                    <div class="d-flex-col">
+                        <div class="fadeI">
+                            <p>
+                                Ngồi chưa kịp ấm chỗ thì nghe tin Ngô Quyền kéo đội quân sát thủ đến hỏi tội. Biết đối mặt trực diện chỉ có nước
+                                đi bụi. Trong lúc hoảng loạn tột độ, thanh niên họ Kiều nghĩ ra nước đi hèn hạ nhất hệ mặt trời, một quyết định 
+                                tự hủy tự bóp mình và cả giang sơn đó là sai tay chân của mình mang châu báu lén lút qua phương Bắc cầu cứu Nam Hán.  
+                            </p>
                         </div>
-
-                        <div>
-                            <img src="image-albums/life-NQ/vuaNQ.jpg" alt="Hịch Tướng Sĩ">
+                        <div class="d-flex stick-scroll">
+                            <div class="width2 moveRight">
+                                <img src="image-albums/life-NQ/caucuu.png">
+                            </div>
+                            <div class="fadeI d-flex center">
+                                <p>
+                                    Danh hiệu "đại sứ" rước voi về giày mạ tổ chính thức được trao cho Kiều Công Tiễn  
+                                </p>
+                            </div>
+                        </div>
+                        <div class="fadeI">
+                            <p>
+                                Về phía quân Nam Hán, ông vua Lưu Cung đang ngồi ngáp ruồi nghe tin có kẻ bên Giao Châu dâng cỗ đến tận miệng, gật đầu đồng ý vội.
+                                Lưu Cung vừa muốn đánh bóng tên tuổi của mình vừa có cớ sang đánh lấy đất đai màu mỡ bên Giao Châu, khôi phục lại ách đô hộ cai trị đã mất, hắn phong con trai cưng
+                                của mình là Lưu Hoàng Tháo làm Giao Vương mang theo đạo quân khổng lồ toàn chiến thuyền vượt sóng tiến thẳng về cửa sông Bạch Đằng.
+                            </p>
                         </div>
                     </div>
+
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Nghe tin quân Nam Hán sắp sang chơi, Ngô Quyền kiểu: từ từ đợi dọn rác trong nhà đã rồi hẵng sang chơi. Thế là ông kéo quân đến thành Đại La, Kiều Công Tiễn
+                                chưa kịp ảo tưởng cảnh lên làm vua thì bị Ngô Quyền gõ bo bo cho vào đầu, tiễn thẳng xuống tâm sự với cha nuôi.
+                            </p>
+                        </div>
+                        <div class="width2 moveLeft">
+                            <img src="image-albums/life-NQ/gietkct.png">
+                        </div>
+                    </div>
+                    <div class="d-flex-col center">
+                        <div class="width3 revealLRUD">
+                            <img src="image-albums/life-NQ/hop.png">
+                        </div>
+                        <div class="fadeI">
+                            <p>
+                                Ngô Quyền họp bàn với bên tham mưu, ngài bảo thằng nhãi Hoàng Tháo này mới lớn, tính tình trẻ trâu, lại cậy có thuyền to
+                                quân đông nên chắc chắn sẽ chủ quan khinh địch, đi xa mỏi mệt nên anh em ta ngồi nhà dưỡng sức lấy quân khỏe đánh quân mệt sẽ chắc thắng.
+                                Nhưng đánh như nào cho nhớ đời cho bố ở nhà ko dám hó hé sang đây nữa mới là nghệ thuật. Vậy là dự án thế kỷ bãi cọc sông Bạch Đằng chính
+                                thức được khởi công
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Người người nhà nhà chung tay ngày đêm làm ra những cây cọc gỗ với đầu nhọn bọc sắt đen. Đem những chiếc cọc gỗ đó cắm sâu xuống lòng sông ngay
+                                chỗ hiểm yếu nhất gần cửa biển, để khi thủy triều lên mặt sông che đi những đầu cọc, nhưng khi thủy triều rút mới lộ ra "quà" cho quân Nam Hán 
+                            </p>
+                        </div>
+                        <div class=" width2 moveLeft">
+                            <img src="image-albums/life-NQ/coc.png">
+                        </div>
+                    </div> 
                 </div>
+                
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex top-center">
+                        <div class="d-flex-col gap100">
+                            <div class="d-flex stick-scroll">
+                                <div class="width2 revealR">
+                                    <img src="image-albums/life-NQ/chienthuat.jpg">
+                                </div>
+                                <div class="fadeI">
+                                    <h2 class="d-flex center">Trận Bạch Đằng năm 938</h2>
+                                    <p>
+                                        Cuối 938, gió mùa Đông Bắc lạnh thấm da thịt. Hạm đội Lưu Hoàng Tháo nghênh ngang tiến vào cửa sông Bạch Đằng. Từ xa, Ngô Quyền thấy mồi đã vào tầm ngắm
+                                        liền tung chiêu thức mang tên "giả vờ thua", ngài cử vài đội thuyền nhẹ ra khiêu chiến, lính của Ngô Quyền vừa đánh vừa chửi bới dăm ba câu, 
+                                        đánh được vài phát cho có rồi đồng loạt quay đầu bỏ chạy chỗ chết. Hoằng Tháo cười ha hả đắc ý, đấy thấy chưa, chưa đánh đã chạy, Giao Châu toàn lũ nhát gan.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex stick-scroll">
+                                <div class=" width2 revealR">
+                                    <img src="image-albums/life-NQ/bachdang.jpg">
+                                </div>
+                                <div class="fadeI d-flex center">
+                                    <p>
+                                        Hạm đội Hoàng Tháo cứ băng băng vượt qua cửa tử mà không hề hay biết, cho đến khi quân
+                                        Nam Hán lọt thỏm vào sâu trong sông Bạch Đằng, cũng là lúc mặt trời dần buông xuống, quà của tự nhiên bắt đầu lộ ra,
+                                        thủy triều nước rút nhanh như cách người yêu cũ trở mặt. Thế là xong dính bẫy rồi, một cảnh tượng kinh hoàng hiện ra trước mắt
+                                        Nam Hán
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="fadeI">
+                                <p>
+                                    Ngô Quyền dẫn đại quân xông ra nhưng mãnh hổ vồ mồi. Quân ta từ trên bờ xả mưa tên xuống, những chiến thuyền nhỏ 
+                                    len lỏi vào bãi cọc để đánh giáp lá cà. Đội hình Nam Hán rối loạn, trên thuyền thì bị xả tên, xuống sông thì bị cọc đâm.
+                                </p>
+                                <p>
+                                    Lưu Hoàng Tháo, vị thái tử trẻ trâu lúc sáng còn mơ mộng làm bá chủ giờ luống cuống tìm đường thoát thân
+                                    nhưng đã quá muộn, vị thái tử kiêu ngạo ấy được nhận 1 vé đăng xuất miễn phí, chìm nghỉm dưới dòng sông
+                                    Bạch Đằng lịch sử
+                                </p>
+                                <p>
+                                    Chỉ trong vòng 1 ngày ngắn ngủi, toàn bộ đạo quân Nam Hán hùng hậu bị tiêu diệt sạch. Tin con trai chết,
+                                    Lưu Cung biết mình không đủ sức đánh lại Ngô Quyền, đành rút quân không dám bén mảng sang lần nào nữa.
+                                </p>
+                                <p>
+                                    Chiến thắng Bạch Đăng năm 938 là một tiếng sấm rền xé toạc màn đêm u tối, kết thúc 1000 năm Bắc thuộc. Mở ra thời kỳ độc lập
+                                    lâu dài của dân tộc.
+                                </p>
+                            </div>
+                        </div>                                                        
+                    </div>
+                </div>
+                
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG IV</span>
-                    <h2>DẤU ẤN ĐỂ LẠI</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">DẤU ẤN ĐỂ LẠI</h2>
                 </div>
 
-                <div class="nq-worship">                      
-                    <div class="nq-worship-img">
-                        <div>
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex">
+                        <div class=" width">
                             <img src="image-albums/life-NQ/thoNQ.jpg" alt="Thờ Ngô Quyền">
                         </div>
-
-                        <div>
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Tên tuổi và công lao được các thế hệ sau ghi nhớ, tôn vinh. Hình tượng Ngô Quyền trở thành
+                                biểu tượng của lòng yêu nước, ý chí độc lập và tinh thần tự cường dân tộc
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class=" width">
                             <img src="image-albums/life-NQ/tuongNQ.jpg" alt="Tượng Ngô Quyền">
-                        </div>                        
+                        </div>
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Nhiều đền thờ, lăng mộ và di tích lịch sử được xây dựng để thờ phụng, tưởng nhớ công lao của
+                                ông, tiêu biểu như Lăng Ngô Quyền và Đền thờ Ngô Quyền
+                            </p>
+                        </div>
                     </div>
-
-                    <div class="nq-content-worship">
-                        <p>Tên tuổi và công lao được các thế hệ sau ghi nhớ, tôn vinh. Hình tượng Ngô Quyền trở thành biểu tượng của lòng yêu nước, ý chí độc lập và tinh thần tự cường dân tộc</p>
-                        <p>Nhiều đền thờ, lăng mộ và di tích lịch sử được xây dựng để thờ phụng, tưởng nhớ công lao của ông, tiêu biểu như Lăng Ngô Quyền và Đền thờ Ngô Quyền</p>
-                    </div>
+                    <div class="d-flex center fadeI">
+                        <p class="blockquote width3">
+                            Ngô Quyền không chỉ thuộc về quá khứ, ông là ngọn lửa đang cháy trong hiện tại, nhắc mỗi chúng
+                            ta sống mạnh mẽ hơn, kiên cường hơn và dũng cảm viết lên chiến thắng của chính đời mình.
+                        </p>                       
+                    </div>                                                                
                 </div>
 
-                <div class="nq-endcontent">
-                    <blockquote>
-                        Ngô Quyền không chỉ thuộc về quá khứ, ông là ngọn lửa đang cháy trong hiện tại, nhắc mỗi chúng ta sống mạnh mẽ hơn, kiên cường hơn và dũng cảm viết lên chiến thắng của chính đời mình.
-                    </blockquote>
-                </div>
+                
             </section>
 
             <section id="dinhbolinh">
-                <div class="dbl-card">
-                    <div class="dbl-img">
+                <div class="hero-card d-flex stick-scroll">
+                    <div class="hero-img moveRight">
                         <img src="image-albums/heroes/dinhbolinh.png" alt="Đinh Bộ Lĩnh">
                     </div>
 
-                    <div class="dbl-info">
-                        <h1 class="dbl-name">Đinh Bộ Lĩnh</h1>
-                        <p class="dbl-birth">924-979</p>
-                    </div>    
-                </div>
-                
-                <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG I</span>
-                    <h2>TIỂU SỬ VÀ SỰ NGHIỆP</h2>
-                </div>
-
-                <div class="dbl-life-story">
-                    <div>
-                        <img src="image-albums/life-DBL/youngDBL.jpg" alt="Đinh Bộ Lĩnh thời trẻ">
+                    <div class="hero-info center d-flex-col">
+                        <h1 class="hero-name">Đinh Bộ Lĩnh</h1>
+                        <p class="birth-death">924-979</p>
                     </div>
-
-                    <div>                  
-                        <p>Đinh Bộ Lĩnh sinh tại Hoa Lư (Ninh Bình ngày nay). Thuở nhỏ nổi tiếng với hình ảnh “cờ lau tập trận”, thể hiện tố chất lãnh đạo và ý chí hơn người</p>
-                        <p>Cậu bé lấy cỏ lau làm cờ, tập hợp đám trẻ con. Đánh trận giả, nhưng lòng đã thật. Lớn lên, không dùng miệng để sinh quyền lực, mà dùng kiếm để dựng nên sơn hà</p>
-                    </div>   
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG II</span>
-                    <h2>CHIẾN CÔNG</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">GIỚI THIỆU</h2>
                 </div>
 
-                <div class="dbl-victory-story">
-                    <div class="dbl-enemy">
-                        <div>
-                            <img src="image-albums/life-DBL/12suquan.jpg" alt="12 sứ quân">
+                <div class="hero-life d-flex-col gap50">
+                    <div class="stick-scroll">
+                        <div class="fadeI">
+                                <p class="intro-hero">
+                                    Khi nhắc đến Đinh Bộ Lĩnh chúng ta thường nghĩ tới Đinh Bộ Lĩnh dẹp loạn 12 sứ quân, nghe rất
+                                    ngầu phải không? Nhưng ít ai biết được trước khi tên tuổi vang dội ấy thì ông có cuộc đời như thế
+                                    nào. Hãy tiếp tục cùng chúng tôi tìm câu trả lời nhé
+                                </p>
                         </div>
-                        
-                        <div>
-                            <p>12 sứ quân cát cứ ở nhiều vùng khác nhau, tranh giành quyền lực sau khi nhà Ngô suy yếu</p>
-                            <p>Tình trạng phân tranh khiến đất nước bị chia cắt, nhân dân chịu nhiều khổ cực</p>             
-                        </div>                  
                     </div>
 
-                    <div class="dbl-battles">
-                        <div class="dbl-battles-info">
-                            <h2>Dẹp loạn 12 sứ quân (966-967)</h2>
-                            <p>Ông đánh từ Thanh đến Nghệ, từ Hoan đến Ái. Từng bước, từng bước, đánh bại 12 sứ quân. Thống nhất Giang Sơn bằng chiến thắng, không phải thỏa hiệp</p>
-                            <p> Kẻ nào phục, cho sống. Kẻ nào loạn, đánh tận gốc</p>
-                        </div>  
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI">
+                            <p>
+                                Nối tiếp câu chuyện lịch sử về Ngô Quyền, năm 944 - Đức Ngô Quyền, vị tổ trung hưng đã đánh tan quân Nam Hán trên sông Bạch Đằng đột ngột băng hà. Ngài ra đi để lại một khoảng trống mênh mông không ai đủ sức lấp đầy.
+                                Triều đình rối ren, lòng người ly tán, nhiều thế lực hào trưởng địa phương lực bị kìm hãm bấy lâu được dịp vùng lên 
+                                sâu xé. Giang sơn gấm voc bỗng chốc vỡ vụn thành 12 mảnh ghép rời rạc.
+                            </p>
+                        </div>
+                        <div class=" width revealLR">
+                            <img src="image-albums/life-DBL/12suquan.jpg">
+                        </div>
+                        <div class="fadeI">
+                            <p>
+                                Trong Bối cảnh hỗn mang ấy, tại Động Hoa Lư (Ninh Bình) - một vùng đất địa linh nhân kiệt. Cậu bé Đinh Bộ Lĩnh đã lớn lên. Cha là Đinh Công Trứ - một vị tướng tài ba dưới trướng Ngô Quyền nên
+                                dòng máu chảy trong Đinh Bộ Lĩnh là dòng máu nhà tướng đầy dũng mãnh và can trường. Nhưng cha mất sớm, ông theo mẹ về nương nhờ chú ruột
+                                sống cuộc đời dân dã, chăn trâu cắt cỏ cùng lũ trẻ trong vùng.
+                            </p>
+                        </div>
+                    </div>
 
-                        <div>
-                            <img src="image-albums/life-DBL/deploan12suquan2.jpg" alt="Dẹp loạn 12 sứ quân">
-                        </div>                                    
+                    <div class="d-flex-col">
+                        <div class=" revealLRUD">
+                            <img src="image-albums/life-DBL/colautaptran.png">
+                        </div>
+                        <div class="fadeI">
+                            Những đứa trẻ chăn trâu ở thung lũng Hoa Lư ngày ấy không chơi những trò chơi trẻ con bình thường, chúng
+                            tham gia vào những trận giả do Đinh Bộ Lĩnh chỉ huy. Ông lấy bông lau làm cờ, lấy lưng châu làm ngai, chia quân 
+                            bày trận, oai phong lẫm liệt như một vị tướng thực thụ.
+                        </div>
                     </div>
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG III</span>
-                    <h2>THÀNH TỰU VÀ TƯ TƯỞNG</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">CHIẾN CÔNG</h2>
                 </div>
 
-                <div class="dbl-talent">
-                    <div class="dbl-content-talent">
-                        <div>
-                            <img src="image-albums/life-DBL/valueDBL.jpg" alt="Giá trị của Đinh Bộ Lĩnh để lại">
-                        </div> 
-
-                        <div>
-                            <p>Đinh Bộ Lĩnh không chỉ dẹp yên loạn 12 sứ quân mà còn đặt nền móng cho một quốc gia thống nhất, độc lập và tự chủ</p>
-                            <p>Đề cao tinh thần thống nhất dân tộc và xây dựng quốc gia độc lập, vững mạnh. Thể hiện ý chí quyết đoán, lấy sức mạnh để lập lại trật tự đất nước.</p>
-                        </div>                                   
+                <div class="hero-life d-flex-col gap50">
+                    <div class="stick-scroll">
+                        <div class="d-flex top-center stick-scroll">
+                           <div class="fadeI d-flex-">
+                                <p>
+                                    Khi trưởng thành, Đinh Bộ Lĩnh không cam chịu cảnh sống ẩn dật. Ông nhìn ra thế cuộc và hiểu rằng
+                                    thời cờ đã đến. Không còn là trận đánh giả với cờ lau. Ông bắt đầu tập hợp lực lượng rèn đúc vũ khí
+                                    thật sự. Những người bạn thuở thiếu thời như Đinh Điền, Nguyễn Bặc, Lưu Cơ, Trĩnh Tú trở thành những cánh tay đắc lực, những 
+                                    vị tướng tiên phong cùng ông xây dựng cơ đồ.
+                                </p>
+                                
+                            </div>
+                            <div class=" width2">
+                                <img src="image-albums/life-DBL/taphop.png">
+                            </div> 
+                        </div>
+                        <div class="fadeI">
+                            <p>
+                                Tiếng tăm Đinh Bộ Lĩnh bắt đầu vang xa khiến các thế lực xung quanh phải dè chừng.
+                            </p>
+                        </div>
+                    </div>
+                    <div>                        
+                        <div class=" revealLR">
+                            <img src="image-albums/life-DBL/ngaydemtap.png">   
+                        </div>
+                        <div class="fadeI">
+                            <p>
+                                Hoa Lư những ngày tháng chuẩn bị ấy không ngừng vang tiếng rèn sắt đúc gươm, tiếng reo hò tập trận vang cả núi rừng.
+                                Đinh Bộ Lĩnh dạy cho quân sĩ cách lợi dụng địa hình để mai phục, dùng ít địch nhiều. Ông hiểu rằng
+                                muốn dẹp loạn 12 sứ quân không chỉ dựa vào sức mạnh cơ bắp mà còn phải dùng cái đầu lạnh.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fadeI">
+                            <p>
+                                Đinh Bộ Lĩnh quyết định nước cờ táo bạo, một canh bạc sinh tử. Thay vì xua quân tấn công Bố Hải Khẩu (Thái Bình) để tranh giành lãnh thổ
+                                ông chọn con đường hòa hiếu. Ông đích thân dẫn con trai trưởng là Đinh Liễn đến gặp Trần Lãm,
+                                Đinh Bộ Lĩnh gạt bỏ cái tôi cúi đầu trước Trần Lãm và đưa ra quyết định đau lòng là để Đinh Liễn
+                                ở lại làm con tin để làm tin cho lời thề ước.
+                            </p>
+                            <p>
+                                Đạo quân Hoa Lư như hổ mọc thêm cánh, sự kết hợp giữa đội quân thiện chiến kỉ luật của Đinh Bộ Lĩnh
+                                và tiềm lực kinh tế, binh lực dồi dào của Trần Lãm đã tạo nên một thế lực vô địch. Đỉnh điểm khi Trần Lãm qua đời, trước khi
+                                nhắm mắt xuôi tay, ông quyết định trao quyền điều binh khiển tướng cho Đinh Bộ Lĩnh.
+                            </p>
+                        </div>
+                        <div class=" revealLRUD">
+                            <img src="image-albums/life-DBL/dieubinh.png">
+                        </div>
+                    </div>
+                    <div class="d-flex-col center">
+                        <div class="fadeI">
+                            <p>
+                                Đinh Bộ Lĩnh tiếp tục đi bẽ gãy từng mắt xích yếu , thu phục lòng người thay vì cầm quân đi 
+                                chinh chiến, chỉ khi gặp những kẻ cứng đầu mới dùng đến quân. Tiếng tăm Vạn Thắng Vương vang dội 
+                                như sấm nổ bên tai, trở thành nỗi ám ảnh kinh hoàng cho những kẻ còn ôm mộng cát cứ. Ông biết lúc 
+                                nào cần tuốt gươm, lúc nào cần tra gươm vào vỏ. Ông biến thù thành bạn, biến chướng ngại vật thành bàn đạp.
+                            </p>    
+                        </div>
+                        <div class=" width3 revealLR">
+                            <img src="image-albums/life-DBL/deploan12suquan.png">
+                        </div>
+                        <div class="fadeI">
+                            <p>
+                                Cục diện 12 sứ quân chẳng khác gì ngọn đèn le lói trước con bão Đinh Bộ Lĩnh, chỉ chờ thời khắc vụt tắt nhường chỗ cho ánh hào quang rực rỡ của một vương triều mới đang lên.
+                                Những sứ quân cuối cùng lần lượt buông vũ khí quy hàng. Non sông gấm vóc bao năm chia cắt nay đã nối liền
+                                lại thành một dải.
+                            </p>    
+                        </div>
                     </div>
                     
-                    <div class="dbl-achievement">
-                        <div>
-                            <img src="image-albums/life-DBL/vuaDBL.jpg" alt="Hoàng đế Đinh Bộ Lĩnh">
-                        </div>
-
-                        <div>
-                            <p>Đặt nền móng cho nhà nước phong kiến độc lập đầu tiên của Việt Nam</p>
-                            <p>Năm 968, ông xưng Hoàng đế đặt tên nước là Đại Cổ Việt. Đóng đô ở Hoa Lư, giữa vùng núi hiểm yếu. Nơi chỉ người quyết thắng mới dám chọn làm kinh đô. Trở thành Hoàng đế đầu tiên của Việt Nam sau thời Bắc thuộc</p>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG IV</span>
-                    <h2>DẤU ẤN ĐỂ LẠI</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">DẤU ẤN ĐỂ LẠI</h2>
                 </div>
 
-                <div class="dbl-worship">                      
-                    <div class="dbl-worship-img">
-                        <div>
-                            <p>Được nhân dân tôn kính và thờ phụng tại nhiều di tích lịch sử, tiêu biểu như Đền Vua Đinh</p>
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex">
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Được nhân dân tôn kính và thờ phụng tại nhiều di tích lịch sử, tiêu biểu như Đền Vua Đinh
+                            </p>
                         </div>
-
-                        <div>
+                        <div class="width2">
                             <img src="image-albums/life-DBL/thoDBL.jpg" alt="Thờ Đinh Bộ Lĩnh">
-                        </div>                  
+                        </div>
                     </div>
 
-                    <div class="dbl-worship-img">
-                        <div>
-                            <p> Hình tượng “cờ lau tập trận” trở thành biểu tượng về ý chí và khát vọng lớn lao từ tuổi trẻ</p>
+                    <div class="d-flex">
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Hình tượng “cờ lau tập trận” trở thành biểu tượng về ý chí và khát vọng lớn lao từ tuổi trẻ
+                            </p>
                         </div>
-                        
-                        <div>
-                            <img src="image-albums/life-DBL/tuongDBL.jpg" alt="Tượng Đinh Bộ Lĩnh">
-                        </div>                      
-                    </div>               
-                </div>
+                        <div class="width2">
+                            <img src="image-albums/life-DBL/tuongDBL.jpg" alt="Thờ Đinh Bộ Lĩnh">
+                        </div>
+                    </div>
 
-                <div class="dbl-endcontent">
-                    <blockquote>
-                        Đinh Bộ Lĩnh không chỉ là một ông vua, ông là kẻ mở đường, là đứa trẻ cầm cỏ lau. Mà cả nghìn năm sau, lịch sử vẫn phải cúi đầu
-                    </blockquote>
-                </div>
+                    <div class="d-flex center fadeI">
+                        <p class="blockquote width3">
+                            Đinh Bộ Lĩnh không chỉ là một ông vua, ông là kẻ mở đường, là đứa trẻ cầm cỏ lau. Mà cả nghìn
+                            năm sau, lịch sử vẫn phải cúi đầu
+                        </p>
+                    </div>
+                </div>      
             </section>
 
             <section id="tranhungdao">
-                <div class="thd-card">
-                    <div class="thd-img">
+                <div class="hero-card d-flex stick-scroll">
+                    <div class="hero-img moveLeft">
                         <img src="image-albums/heroes/tranhungdao.png" alt="Trần Hưng Đạo">
                     </div>
 
-                    <div class="thd-info">
-                        <h1 class="thd-name">Trần Hưng Đạo</h1>
-                        <p class="thd-birth">1226 - 1300</p>
-                    </div>    
-                </div>
-                
-                <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG I</span>
-                    <h2>TIỂU SỬ VÀ SỰ NGHIỆP</h2>
-                </div>
-
-                <div class="thd-life-story">
-                    <div>
-                        <img src="image-albums/life-THD/youngthd.jpg" alt="Trần Hưng Đạo thời trẻ">
-                    </div>
-
-                    <div>                  
-                        <p>Sinh ra trong hoàng tộc nhà Trần. Ngay từ nhỏ, ông nổi tiếng thông minh học rộng, am hiểu binh pháp và có trí hơn người.</p>
-                        <p>Cha ông từng mang nỗi uất hận vì biến cố trong dòng tộc. Giữa thù riêng và đại nghĩa, ông quyết định<span class="highlight"> Gác thù nhà để giữ yên xã tắc.</span></p>
-                        <p>Ông hiểu rằng vận mệnh dân tộc luôn lớn hơn mọi ngai vàng</p>
-                    </div>   
-                </div>
-
-                <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG II</span>
-                    <h2>CHIẾN CÔNG</h2>
-                </div>
-
-                <div class="thd-victory-story">
-                    <div class="thd-enemy">
-                        <div>
-                            <img src="image-albums/life-THD/giacnguyenmong.jpg" alt="Giặc Nguyên Mông">
-                        </div>
-                        
-                        <div>
-                            <p>Lúc bấy giờ, quân Nguyên Mông dưới quyền Hốt Tất Liệt là cơn bão quân sự quét qua khắp Á - Âu. Trước thử thách sinh tử của dân tộc, triều đình nhà Trần đã trao cho Trần Quốc trọng trách quốc công tiết chế, thống lĩnh toàn quân</p>
-                            <p>Bằng tài thao lược xuất chúng và tầm nhìn chiếc lược sắc bén, ông đã cùng nhân dân Đại việt viết lên một trong những trang huy hoàng nhất của lịch sử: <span class="highlight">Ba lần đánh bại quân Nguyên Mông</span></p>             
-                        </div>                  
-                    </div>
-
-                    <div class="thd-battles">
-                        <div>
-                            <img src="image-albums/life-THD/lan1.jpg" alt="Trận Đông Bộ Đầu">
-                        </div>
-                            
-                        <div class="thd-battles-info">
-                            <h2>Trận Đông Bộ Đầu (Lần 1 - 1258)</h2>
-                            <p>Năm 1258, quân Mông Cổ lần đầu tràn vào Đại Việt với sức mạnh từng khiến nhiều quốc gia khiếp sợ. Trước thế giặc mạnh, quân dân nhà Trần chủ động rút lui để bảo toàn lực lượng rồi bất ngờ phản công tại Đông Bộ Đầu.</p>
-                            <p>Chỉ sau chưa đầy một tháng, quân xâm lược bị đánh bật khỏi bờ cõi Đại Việt</p>
-                        </div>
-                            
-                    </div>
-
-                    <div class="thd-battles">
-                        <div>
-                            <img src="image-albums/life-THD/lan2.jpg" alt="Trận Hàm Tử">
-                        </div>
-                            
-                        <div class="thd-battles-info">
-                            <h2>Trận Hàm Tử (Lần 2 - 1285)</h2>
-                            <p>Năm 1285, quân Nguyên Mông huy động lực lượng lớn hơn bao giờ hết, tiến đánh Đại Việt từ nhiều hướng. Dưới sự chỉ huy của Trần Hưng Đạo, quân dân nhà Trần kiên cường chiến đấu và giành những chiến thắng vang dội tại Hàm Tử, Chương Dương</p>
-                            <p>Toa Đô bị tiêu diệt, Thoát Hoan phải chui ống đồng chạy về nước, cuộc xâm lược hoàn toàn thất bại</p>
-                        </div>     
-                    </div>
-
-                    <div class="thd-battles">
-                        <div>
-                            <img src="image-albums/life-THD/lan3.jpg" alt="Trận Bạch Đằng">
-                        </div>
-                            
-                        <div class="thd-battles-info">
-                            <h2>Trận Bạch Đằng (Lần 3 - 1288)</h2>
-                            <p>Năm 1288, quân Nguyên Mông tiếp tục kéo sang với quyết tâm chinh phục Đại Việt lần cuối. Trần Hưng Đạo đã xây dựng thế trận tài tình trên sông Bạch Đằng, nhử quân địch vào bãi cọc ngầm rồi phản công quyết định</p>
-                            <p>Hàng trăm chiến thuyền bị đánh chìm, đạo quân xâm lược tan rã, chấm dứt hoàn toàn tham vọng xâm lăng Đại Việt của đế chế Nguyên Mông.</p>
-                        </div>                       
+                    <div class="hero-info center d-flex-col">
+                        <h1 class="hero-name">Trần Hưng Đạo</h1>
+                        <p class="birth-death">1226 - 1300</p>
                     </div>
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG III</span>
-                    <h2>THÀNH TỰU VÀ TƯ TƯỞNG</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">Giới thiệu</h2>
                 </div>
 
-                <div class="thd-talent">
-                    <div class="thd-content-talent">
-                        <div>
-                            <p>Không chỉ là một thiên tài quân sự, Trần Quốc Tuấn còn là một nhà tư tưởng lớn luôn lấy nhân dân làm gốc. </p>
-                            <p>Ông để lại những tư tưởng giữ nước vượt thời đại qua tác phẩm Hịch tướng sĩ và lời dặn nổi tiếng: “Khoan thư sức dân để làm kế sâu rễ bền gốc, đó là thượng sách giữ nước.”</p>
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI">
+                            <p class="intro-hero">
+                                Bạn có biết đời nhà Trần có một vị Thánh và một vị Phật không? Đó chính là Đức Thánh Trần Hưng Đạo và Phật Hoàng Trần Nhân Tông.
+                                Nhưng chúng ta sẽ cùng tìm hiểu riêng vị Đức Thánh Trần - người đã lãnh đạo nhân dân 3 lần kháng chiến chống Nguyên Mông.
+                                
+                            </p>
                         </div>
-
-                        <div>
-                            <img src="image-albums/life-THD/valueTHD.jpg" alt="Giá trị của Trần Hưng Đạo để lại">
-                        </div>                   
                     </div>
                     
-                    <div class="thd-achievement">
-                        <div>
-                            <img src="image-albums/life-THD/hichtuongsi.jpg" alt="Hịch Tướng Sĩ">
+                    <div class="d-flex stick-scroll">
+                        <div class="2width">
+                            <img src="image-albums/life-THD/youngthd.png">
                         </div>
-
-                        <div>
-                            <p>Trước khi đánh thắng quân Nguyên Mông bằng gươm giáo, Trần Quốc Tuấn đã đánh thức lòng yêu nước bằng ngòi bút</p>
-                            <p>Hịch tướng sĩ không chỉ là lời hiệu triệu quân đội, mà còn là tiếng gọi của non sông, khơi dậy ý chí chiến đấu và lòng tự hào dân tộc trong mỗi người Đại Việt</p>
-                        </div>                 
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Sinh ra trong hoàng tộc nhà Trần. Ngay từ nhỏ, ông nổi tiếng thông minh học rộng, am hiểu
+                                binh pháp và có trí hơn người.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>                       
+                        <p>Cha ông từng mang nỗi uất hận vì biến cố trong dòng tộc. Giữa thù riêng và đại nghĩa, ông
+                            quyết định<span class="highlight"> Gác thù nhà để giữ yên xã tắc.</span></p>
+                        <p>Ông hiểu rằng vận mệnh dân tộc luôn lớn hơn mọi ngai vàng</p>
                     </div>
                 </div>
 
                 <div class="chapter-divider">
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">CHIẾN CÔNG</h2>
+                </div>
+
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex stick-scroll">
+                        <div class=" width2 revealR">
+                            <img src="image-albums/life-THD/kybinhmongco.png" alt="Giặc Nguyên Mông">
+                        </div>
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Giới thiệu qua một chút về kẻ thù chúng ta sắp đối mặt, một kẻ không phải dạng vừa đâu. 
+                                Một cơn bão mang tên Quân Nguyên Mông, lực lượng quân sự của đế quốc Mông Cổ và nhà Nguyên.
+                                Kỵ binh Mông Cổ đi đến đâu cỏ không mọc được tới đó. Nếu kỵ binh Châu Âu thời đó giống mấy chiếc
+                                xe tăng hạng nặng chạy chậm và tốn xăng thì kỵ binh Mông Cổ chính là mấy con xe đua công thức một
+                                đời mới nhất.  
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Mỗi lính Mông Cổ khi ra trận thường dắt theo từ 3-4 con ngựa. Vâng, bạn không nghe nhầm đâu, một người cưỡi 4 con ngựa.
+                                Đang chạy con này mà thấy nó mệt, họ nhảy sang con khác cưỡi tiếp ngay trên đường chạy, không cần dừng lại đổ xăng hay thay
+                                nhớt. Nhờ kỹ năng đổi xe thượng thừa này, quân Mông Cổ có tốc độ hành quân nhanh đến mức người ta đồn là
+                                họ có thể xuất hiện ngay sau lưng địch trước cả khi tin tình báo kịp bay về. Tốc độ của họ tính bằng trăm km mỗi ngày.
+                            </p>
+                        </div>
+                        <div class=" width moveLeft">
+                            <img src="image-albums/life-THD/kybinhmongco2.png">                            
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fadeI">
+                            <p>
+                                Chưa hết, kỹ năng chiến đấu của họ cũng thuộc hàng bá đạo, cung tên Mông Cổ có tầm bắn xa và sát thương mạnh hơn hẳn các loại cung ở Châu Âu hay Trung Hoa bấy giờ.
+                                Họ có thể vừa phi ngựa nước đại vừa xoay người bắn ngược về phía sau với độ chính xác tuyệt đối.
+                                Cái này giống như bạn lái xe máy tốc độ 80km/h, thả 2 tay rồi quay lại bắn headshot thằng đuổi theo bằng súng lục vậy.
+                            </p>
+                        </div>
+                        <div class="d-flex gap50">
+                            <div class=" revealL">
+                                <img src="image-albums/life-THD/kybinhmongco3.png">
+                            </div>
+                            <div class=" revealR">
+                                <img src="image-albums/life-THD/kybinhmongco4.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex stick-scroll">
+                            <p class="fadeI d-flex center">
+                                Vậy thành tích của cái đội hack map này là gì? Họ đã san phẳng các vương quốc Hồi giáo ở Trung Á, biến cả vùng Lưỡng Hà trù phú thành bình địa. Họ tràn sang Châu Âu, đánh tan nát liên quân Nga, Kev khiến 
+                                các hiệp sĩ Châu Âu mặc giáp sắt nặng nề trở thành những chú hề vụng về trên chiến trường. Phía Đông, họ nuốt chửng cả Nam Tống - triều đại Trung Hoa giàu có và văn minh bậc nhất thế giới bấy giờ.
+                                Nói tóm lại cái tên Nguyên Mông vào thế kỷ 13 giống như cơn đại dịch, một cái chết đen mà ai nghe cũng phải rén.
+                            </p>
+                            <div class="width2">
+                                <img src="image-albums/life-THD/mongcomap.gif">
+                            </div>
+                        </div>
+                        <p class="fadeI">
+                            Tư duy của người Mông Cổ rất đơn giản, hàng thì sống còn chống thì chết. Và cái chết họ mang đến thường hủy diệt toàn bộ. Họ áp dụng
+                            triệt để chiêu khủng bố tinh thần, tàn sát dã man. Giáo án này hiệu quả đến mức nhiều nơi mở cửa thành đầu hàng ngay khi thấy bụi cuốn mù mịt từ xa.
+                            Thế nên khi quân Mông Cổ quay cái nhìn sang Đại Việt, trong mắt họ chúng ta chỉ là một cái chấm nhỏ xíu.
+                        </p>
+                        <p class="fadeI">
+                            Đại Việt biết mình yếu hơn về sức mạnh, nên ta không dại gì chơi theo luật của chúng. Trần Hưng Đạo đã sớm nhận ra, muốn thắng thằng khổng lồ
+                            này không thể dùng sức trâu mà dùng não.
+                        </p>
+                    </div>
+                    <div class="d-flex top-center stick-scroll">
+                        
+                        <div class="width2">
+                            <img src="image-albums/life-THD/lan1.jpg" alt="Trận Đông Bộ Đầu">
+                        </div>
+
+                        <div class="fadeI">
+                            <h2 class="d-flex center">Trận Đông Bộ Đầu (Lần 1 - 1258)</h2>
+                            <p>
+                                Năm 1258, quân Mông Cổ lần đầu tràn vào Đại Việt với sức mạnh từng khiến nhiều quốc gia
+                                khiếp sợ. Trước thế giặc mạnh, quân dân nhà Trần chủ động rút lui để bảo toàn lực lượng
+                                rồi bất ngờ phản công tại Đông Bộ Đầu.
+                                Chỉ sau chưa đầy một tháng, quân xâm lược bị đánh bật khỏi bờ cõi Đại Việt
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex-col center">
+                        <div class="width2">
+                            <img src="image-albums/life-THD/lan2.png" alt="Trận Hàm Tử">
+                        </div>
+                        <h2>Trận Hàm Tử (Lần 2 - 1285)</h2>
+                            <p class="fadeI">
+                                Năm 1282, khi tin tình báo bay về báo rằng Quân Nguyên Mông đang dục dịch sang hỏi thăm sức khỏe lần 2, vua Trần liền mở ngay 
+                                cuộc họp thượng đỉnh tại bến Bình Than (Hải Dương). Nơi đây quy tụ tất cả cá mập, vương hầu, tướng lĩnh cốt cán trong dòng tộc. Nội dung cuộc họp là để 
+                                bàn xem ai sẽ lo hậu cần, ai lo tiên phong. Tại đây, Trần Hưng Đạo chính thức được trao quyền tổng chỉ huy quân đội
+                                hay nói cách khác là nhận trức đội trưởng đội gánh team
+                            </p>
+                            <div class="width2 revealLR">
+                                <img src="image-albums/life-THD/hop.png">
+                            </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="d-flex gap50">
+                            <div class="moveRight">
+                                <img src="image-albums/life-THD/dienhong.png">
+                            </div>
+                            <div class="moveLeft">
+                                <img src="image-albums/life-THD/dienhong2.png">
+                            </div>
+                        
+                        </div>
+                        <p class="fadeI">
+                            Đỉnh cao nghệ thuật chính trị phải kể đến hội nghị Diên Hồng diễn ra hai năm sau đó vào năm 1284. Đây có thể coi là cuộc trưng cầu dân ý đầu tiên trong lịch sử Việt Nam. Vị vua trẻ tuổi Trần Nhân Tông
+                            đã mời các bô lão có tiếng nhất trong dân chúng về Thăng Long để hỏi ý kiến. Các bạn thử tưởng tượng những người già chỉ thích đánh cờ, vui thú điền viên, sợ nhất là tiếng ồn, đánh nhau và biến động. Thế mà 
+                            khi vua hỏi "Thế giặc mạnh thế này nên hàng hay nên đánh?" Cả hội trường Diên Hồng đồng thanh hô to "Đánhh!". Cái tiếng hô nó nổi kinh khủng, lan truyền từ kinh thành về thôn xóm.
+                        </p>
+                    </div>
+                    <div class="d-flex center stick-scroll">
+                        <div>
+                            <div class="width revealLR">
+                            <img src="image-albums/life-THD/hichtuongsi.png">
+                            </div>
+                            <div class="width revealLR">
+                            <img src="image-albums/life-THD/hichtuongsi2.png">
+                            </div>
+                        </div>
+                        <p class="fadeI">
+                            Và đây cũng là lúc tác phẩm truyền đời mang tên "Hịch tướng sĩ" được Trần Hưng Đạo viết. Nếu các bạn nghĩ Hịch tướng sĩ là một bài văn cổ chán ngắt,
+                            bắt buộc phải học trong sách giáo khoa thì các bạn lầm to. Nếu hiểu theo ngôn ngữ Gen Z bây giờ thì nó chính là một bài rap chửi cực gắt kết hợp nghệ thuật thao túng đỉnh cao mà ông dành tặng cấp dưới của
+                            mình. Bối cảnh khi đó có một số tướng lĩnh nhà Trần bắt đầu chủ quan lơ là, nước đến chân mới nhảy, suốt ngày chỉ lo ăn chơi tận hưởng nốt cuộc đời chờ chết sợ quân Nguyên.
+                            Bài Hịch này sinh ra để chỉnh đốn lại đội ngũ.
+                        </p>
+                    </div>
+
+                    <div class="d-flex stick-scroll">
+                        <p class="fadeI d-flex center">
+                            Trần Hưng Đạo hiểu rằng muốn đánh bại bọn nhà giàu Mông Cổ được trang bị hàng tận răng thì phải chơi bài du kích, chơi bài nhà nghèo vượt khó.
+                            Ông cho xây căn cứ Vạn Kiếp trở thành doanh trại kiên cố, một kho lương và vũ khí. Quan trọng hơn, ông chuẩn bị cho một chiến thuật sau này trở thành 
+                            thương hiệu của Việt Nam - Vườn khồng nhà trống. 
+                        </p>
+                        <div class="moveLeft">
+                            <img src="image-albums/life-THD/vuon0nhatrong.png">
+                        </div>
+                    </div>
+
+                    <div class="d-flex stick-scroll">
+                        <div class="width revealLR">
+                            <img src="image-albums/life-THD/yetkieu-datuong.jpg">
+                        </div>
+                        <p class="fadeI d-flex center">
+                            Trong khâu tuyển dụng nhân sự, ông còn có những nước đi rất thoáng. Ông không quan trọng bằng cấp hay xuất thân, miễn là có tài và trung thành. Nhờ thế
+                            mà ông chiêu mộ được những dị nhân như Yết Kiêu, Dã Tượng. Những người vốn chỉ là gia nô, xuất thân thấp kém, nhưng có siêu năng lực đặc biệt.
+                            Yết Kiêu thì bơi lặn như rái cá, đục thuyền địch như cơm bữa. Dã Tượng thì nổi tiếng với tài thuần phục voi rừng.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="fadeI">
+                            Đến hẹn phải lên. Năm 1285, bóng ma chiến tranh chính thức quay lại hỏi thăm lần 2, và lần này mang quà đặc biệt gấp 10 lần, bất ngờ gấp trăm lần. Hãy nhìn 
+                            vào đội hình ra sân của đội khách , dẫn đầu là thoát Hoan - con trai cưng của Hốt Tất Liệt, theo sau là đôi hình 50 vạn quân (nửa triệu người). Con số này đông đến
+                            mức người ta đồn rằng Quân Nguyên đi ướng nước ở sông thì mực nước sông cũng phải tụt đi một nửa. Chưa hết, Hốt Tất Liệt còn tinh tế chuẩn bị thêm quà quê từ phía nam điều thêm 
+                            tướng Toa Đô đánh thốc lên trở thành thế gọng kìm.
+                        </p>
+                        <div class="d-flex gap50">
+                            <div class="moveRight">
+                                <img src="image-albums/life-THD/thoathoan.png">
+                            </div>
+                            <div class="moveLeft">
+                                <img src="image-albums/life-THD/50vanquan.png"> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <p class="fadeI">
+                            Giai đoạn đầu cuộc chiến nổ ra, đúng như dự đoán, Đại Việt bị ép phải cần bình oxy, bị áp đảo tuyệt đối, quân ta phải vừa đánh vừa lùi. Lúc này áp lực khủng khiếp đến mức nội 
+                            bộ nhà Trần bắt đầu dao động. Vua Trần Thánh Tông nhìn cảnh đất nước bị giày xéo, lòng đau như cắt. Trong buổi họp khẩn, nhà vua ướm hỏi Trần Hưng Đạo: "Thế giặc mạnh thế này hay là ta hàng cho dân đỡ khổ?"
+                            Và đây là khoảnh khắc mà Trần Hưng Đạo bật chế độ ngầu lòi nhất. Ông không nao núng, nhìn vua và buông một câu xanh rờn: "Bệ hạ chém đầu thần rồi hãy hàng". 
+                        </p>
+                        <p class="fadeI">
+                            Từ sau liều thuốc tinh thần ấy, đội quân Đại Việt như vực dậy. Trần Hưng Đạo vẽ lại chiến thuật, ông chia nhỏ quân đội thực hiện nghi binh.
+                            Hôm nay Quân Nguyên thấy cờ Trần Hưng Đạo ở đây, mai lại thấy ở kia, không biết đâu mà lần.
+                        </p>
+                    </div>
+
+                    <div class="d-flex stick-scroll">
+                        <div class="width revealL">
+                            <img src="image-albums/life-THD/quannguyenkietque.jpg">
+                        </div>
+                        <p class="fadeI d-fex center">
+                            Lần này kế hoạch vườn không nhà trống phát huy tác dụng rõ rệt. Các bạn biết mùa hè miền Bắc Việt Nam nó nóng kinh khủng thế nào rồi đấy.
+                            Nóng ẩm oi bức đến người bản địa còn muốn xỉu, huống chi mấy anh Mông Cổ quen sống xứ lạnh thảo nguyên. Cái nóng thiêu đốt công thêm mưa rào nhiệt đới
+                            biến quân Nguyên thành những con rù. Dịch bệnh thì bùng phát, lương thực thì can kiệt, tinh thần quân địch tụt dốc không phanh.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="fadeI"> 
+                            Từ tháng 5 năm 1285, thế cờ xoay chiều. Nhân thấy quân địch mệt mỏi, Trần Hưng Đạo phất cờ tổng tiến công đánh cho tan đàn xẻ nghé quân Nguyên.
+                            Cánh quân phía Nam của Toa Đô bị cô lập hoàn toàn, hắn tìm cách liên lạc với Thoát Hoan nhưng bị quân ta bao vây tứ phía ở trận Tây Kết. Trong cơn tuyệt
+                            vọng hắn đã chiến đấu và bỏ mạng.
+                        </p>
+                        <p class="fadeI">
+                            Nghe tin Toa Đô chết, Thoát Hoan ở phía Bắc sợ xanh mặt, lúc này mục tiêu duy nhất là về nhà với mẹ, nhưng đường về bị các anh lớn quân ta chặn hết rồi. Cung tên 
+                            bắn như mưa, trong cơn hoảng loạn, Thoát Hoan đã thực hiện một pha hack não vô cùng ảo diệu đó là chui tọt vào ống đồng bảo lính khiêng về bảo toàn tính mạng. Thái tử cũng chỉ thế này thôi.
+                        </p>
+                        <p class="fadeI">
+                            Đại Việt đã chứng mình rằng dù bạn có quân đông đến đâu mà vào sân nhà chúng tôi không xin phép thì bị đuổi đừng kêu.
+                        </p>
+                    </div>
+
+                    <div class="d-flex-col center gap50">
+                        <h2 class="d-flex center">Trận Bạch Đằng (Lần 3 - 1288)</h2>
+                        <div class="width2"> 
+                            <img src="image-albums/life-THD/lan3.jpg" alt="Trận Bạch Đằng">
+                        </div>
+
+                        <div class="d-flex-col center">
+                            <p class="fadeI">
+                                Quá tam ba bận, Hốt Tất Liệt sau lần 2 thua đau đớn, cay cú quá lần này quyết chơi tất tay ván cuối vào năm 1288
+                            </p>
+                            <p class="fadeI">
+                                Lần này rút kinh nghiệm sâu sắc, mang theo cả thủy quân do Ô Mã Nhi - một tay tướng khát máu hung hãn cầm đầu. Về phía bộ binh là gương mặt
+                                thân quen ống đồng Thoát Hoan, hắn quay lại để xóa mác ống đồng rửa hận. Hắn mang cả một đội quân đông đảo quyết tâm san bằng Thăng Long lấy lại liêm sỉ.
+                            </p>
+                            <div class="width2 revealLRUD">
+                                <img src="image-albums/life-THD/trathulan3.jpg">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="d-flex stick-scroll">
+                                <p class="fadeI d-flex center">
+                                    Đầu game, quân Nguyên đã hết lương thực. Bài học xương máu vườn không nhà trống của nhà Trần vẫn còn nguyên giá trị. Bây giờ nguồn sống duy nhất của quân Nguyên trông chờ vào thyền lương của Trương Văn Hổ.
+                                    Nhưng đen cho đội bạn lại gặp Trần Khánh Dư ở Vân Đồn mới đau, Trần Khánh Dư đã thực hiện một pha cướp tài nguyên mẫu mực, đánh chìm toàn bộ tàu lương địch. 
+                                </p>
+                                <div class="revealR">
+                                    <img src="image-albums/life-THD/trankhanhdu.jpg">
+                                </div>
+                            </div>
+                            
+                            <p class="fadeI">
+                                Mất lương thực, quân Nguyên rơi vào tình thế chưa đánh đã thua. Thoát Hoan ở Thăng Long đói meo chờ mãi không thấy ship đồ ăn đến, nhận ra nếu cứ chơi ở đây sẽ chết đói trước
+                                khi chết trận. Ngay lập tức cay đắng ra lệnh rút quân về nước.
+                            </p>
+                            <p class="fadeI">
+                                Với kinh nghiệm đọc map của mình, Trần Hưng Đạo đọc vị được đường đi nước bước của địch như sách giáo khoa, biết chúng sẽ rút qua đường thủy sông Bạch Đằng.
+                                Đây chính là lúc ta đóng cửa thả chó, một đi không trở lại. Lần này cụ Trần quyết định diệt tận gốc, ông chọn cửa sông Bạch Đằng, nơi con sông huyền thoại năm xưa
+                                Ngô Quyền dạy quân Nam Hán một bài học về kỹ thuật đóng cọc. Trần Hưng Đạo quyết tái hiện lại lịch sử năm ấy nhưng lần này vip pro hơn.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex-col">
+                        <div class="d-flex stick-scroll">
+                            <p class="fadeI d-flex center">
+                                Hạm đội Ô Mã Nhi hùng hổ tiến vào sông Bạch Đằng. Khi đó là sáng sớm, thủy triều dâng cao che lấp bãi cọc, Trần Hưng Đạo cho một vài đội thuyền nhẹ ra khiêu khích đối phương.
+                                Ô Mã Nhi thấy thuyền bé tí dám trêu mình thì nổi máu điên ra lệnh toàn hạn đội đuổi theo. Dụ địch sâu vào bãi cọc, hắn cứ ngỡ mình thế thượng phong
+                                hoàn toàn không để ý mực nước cạn dần. Và rồi thời khác đã định, thủy triều rút như tụt huyết áp. Tiếng gỗ đâm răng rắc vào thuyền. Hạm đội toán loạn, ùn tắc giao thông kéo dài.
+                                Đúng lúc đó hàng ngàn mũi tên tẩm độc của quân Đại Việt giáng xuống, địch chết như ngả rạ. Ô Mã Nhi bị bắt sống trong sự ngỡ ngàng như con nai vàng ngơ ngác.
+                            </p>
+                            <div class="width moveLeft">
+                                <img src="image-albums/life-THD/bachdang88.png">
+                            </div>
+                        </div>
+                        <p class="fadeI">
+                            Thoát Hoan nhận được tin thì cuống cuồng trốn về nước, thề chắc lần sau không dám sang đây chơi nữa.
+                        </p>
+                        <p class="fadeI">
+                            Kết cục, đế chế Nguyên Mông, kẻ chinh phục cả thế giới lại phải nhận lấy thất bại trước một đất nước nhỏ bé không những 1 mà tận 3-0. Sau trận cuối này nhà Nguyên
+                            cạch mặt Đại Việt Luôn, không bao giờ dám bén mảng sang lần thứ 4.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="chapter-divider">
                     <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG IV</span>
                     <h2>DẤU ẤN ĐỂ LẠI</h2>
                 </div>
 
-                <div class="thd-worship">                      
+                <div class="hero-life">
                     <div class="thd-worship-img">
                         <div>
                             <img src="image-albums/life-THD/tuongTHD.jpg" alt="Tượng Trần Hưng Đạo">
                         </div>
 
-                        <div>
+                        <div class="d-flex center">
                             <p>Sau khi qua đời, dân gian Việt Nam suy tôn ông thành Đức Thánh Trần - Cửu Quan Vũ Đế</p>
                         </div>
                     </div>
@@ -534,157 +974,228 @@
                     <div class="thd-worship-img">
                         <div>
                             <img src="image-albums/life-THD/thothd.jpg" alt="Thờ Trần Hưng Đạo">
-                        </div>     
-                        
-                        <div>
-                            <p>Hơn bảy thế kỷ đã trôi qua, tên tuổi Trần Hưng Đạo vẫn là biểu tượng của lòng yêu nước, ý chí quật cường và tinh thần bảo vệ non sông</p>
                         </div>
-                    </div>                  
+
+                        <div class="d-flex ">
+                            <p>Hơn bảy thế kỷ đã trôi qua, tên tuổi Trần Hưng Đạo vẫn là biểu tượng của lòng yêu nước, ý
+                                chí quật cường và tinh thần bảo vệ non sông</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="thd-endcontent">
+                <div class="thd-endcontent d-flex center">
                     <blockquote>
                         Dù không ngồi trên ngai vàng,
                         ông vẫn sống mãi trong trái tim dân tộc Việt Nam.
                     </blockquote>
                 </div>
             </section>
-                
+            
             <section id="nguyenhue">
-                <div class="qt-card">
-                    <div class="qt-img">
+                <div class="hero-card d-flex">
+                    <div class="hero-img moveRight">
                         <img src="image-albums/heroes/nguyenhue.png" alt="Nguyễn Huệ">
                     </div>
 
-                    <div class="qt-info">
-                        <h1 class="qt-name">Nguyễn Huệ</h1>
-                        <p class="qt-birth">898 - 944</p>
-                    </div>    
+                    <div class="hero-info center d-flex-col">
+                        <h1 class="hero-name">Nguyễn Huệ</h1>
+                        <p class="birth-death">1753 - 1792</p>
+                    </div>
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG I</span>
-                    <h2>TIỂU SỬ VÀ SỰ NGHIỆP</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">Giới thiệu</h2>
                 </div>
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex stick-scroll">
+                        <div class=" width revealU">                        
+                            <img src="image-albums/life-QT/qt-child.jpg" alt="Quang Trung thời trẻ">
+                        </div>
 
-                <div class="qt-life-story">
-                    <div>
-                        <img src="image-albums/life-QT/youngQT.jpg" alt="Nguyễn Huệ thời trẻ">
+                        <div class="fadeI">
+                            <p class="intro-hero">
+                                Khi nhắc đến Nguyễn Huệ, người ta nghĩ ngay đến vị Hoàng đế thiên tài, bách chiến cách thắng với những cuộc hành quân thần tốc khủng khiếp
+                                Để biết rõ thêm về vị anh hùng áo vải này, chúng ta sẽ tìm hiểu về trận đánh nổi tiếng thần tốc nhất của lịch sử Việt Nam
+                            </p>                      
+                            <p>
+                                Xuất thân trong một gia đình bình dân, chủ yếu làm nông và buôn trầu cau. Thời trẻ, 
+                                ông nổi bật với tư chất thông minh, sức khỏe phi thường và sớm được rèn luyện văn võ,
+                                ông sớm có kiến thức quân sự và nuôi dưỡng ý chí lớn
+                            </p>                            
+                        </div>  
                     </div>
 
-                    <div>                  
-                        <p>Quang Trung, Nguyễn Huệ xuất thân từ một gia đình bình thường tại vụn đất Tây Sơn. Nguyễn Huệ không có tước vị rực rỡ từ thời nhỏ, nhưng bên trong lớp áo vải ấy là một ý chí sắt đá và một tầm nhìn thiên tài</p>
-                        <p>Ông không đợi vận mệnh gọi tên, ông tự tay tạo ra vận mệnh. Từ cuộc khởi nghĩa của những người nông dân, ông đã tui luyện nên một đội quân kỷ luật đến mức đi không giấu, nấu không khói, sẵn sàng nghiền nát mọi kẻ thù</p>
-                    </div>                   
-                </div>
-
-                <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG II</span>
-                    <h2>CHIẾN CÔNG</h2>
-                </div>
-
-                <div class="qt-victory-story">
-                    <div class="qt-enemy">
-                        <div>
-                            <p> Quân Thanh xâm lược do Tôn Sĩ Nghị chỉ huy, ngạo mạn tuyên bố sẽ ăn Tết tại Thăng Long, Quang Trung trả lời bằng một cuộc hành quân thần tốc không tưởng</p>
-                        </div>
+                    <div class="d-flex stick-scroll">                       
+                        <div class="fadeI center d-flex-col">
+                            <p>
+                                Nhờ tài thao lược thiên bẩm, khi mới 26 tuổi, ông được Nguyễn Nhạc phong làm Long Nhương tướng quân. 
+                                Ông nổi danh là một vị tướng thiện chiến, hành quân chớp nhoáng, đóng vai trò trụ cột trong việc 
+                                đánh dẹp và mở rộng lãnh thổ từ rất sớm.
+                            </p>
+                        </div>  
                         
-                        <div>
-                            <img src="image-albums/life-QT/giacThanh.jpg" alt="Giặc Thanh">
-                        </div>                      
-                    </div>
-
-                    <div class="qt-battles">
-                        <div>
-                            <img src="image-albums/life-QT/trandanhQT.jpg" alt="Trận Ngọc Hồi - Đống Đa">
-                        </div>
-
-                        <div class="qt-battles-info">
-                            <h2>Trận Ngọc Hồi - Đống Đa (1789)</h2>
-                            <p>Từ Phú Xuân ra Bắc Hà, ông cho lính vừa đi vừa nghỉ trên võng, thay phiên nhau khiêng để quân đội không bao giờ dừng lại. Đó không chỉ là sức lực, đó là sự đỉnh cao của tổ chức và kỳ lực thép</p>
-                            <p>Đánh cho để dài tóc, đánh cho để đen răng, lời hịch của ông là tiếng sấm báo hiệu sự diệt vong cho kẻ thù</p>
-                            <p>Trận Ngọc Hồi - Đống Đa là minh chứng cho lối đánh áp đảo, mạnh mẽ, bất ngờ và tàn khốc. Quân thanh chưa kịp tỉnh giấc mộng xâm lược đã phải bỏ chạy tán loạn qua sông Hồng</p>
-                        </div>                                                              
-                    </div>
+                         <div class=" width">
+                            <img src="image-albums/life-QT/qt-young.jpg" alt="Quang Trung thời trẻ">
+                        </div>                    
+                    </div>                                                              
                 </div>
 
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG III</span>
-                    <h2>THÀNH TỰU VÀ TƯ TƯỞNG</h2>
-                </div>
-
-                <div class="qt-talent">
-                    <div class="qt-content-talent">
-                        <div>
-                            <img src="image-albums/life-QT/valueQT.jpg" alt="Giá trị của Nguyễn Huệ để lại">
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">CHIẾN CÔNG</h2>
+                </div>   
+                
+                <div class="hero-life d-flex-col gap50">
+                    <div class="d-flex stick-scroll">       
+                        <div class="width2 revealLRUD">
+                            <img src="image-albums/life-QT/lctbannc.jpg">
                         </div>
+                        <div class="fadeI center d-flex-col">
+                            <p>
+                                Năm 1788, dưới sự bá đạo của quân Tây Sơn, vua Lê Chiêu Thống chạy sang Trung Quốc và
+                                cầu cứu nhà Thanh nhằm đánh đuổi quân Tây Sơn, hồi sinh gia tộc   
+                            </p>
+                        </div>
+                    </div>
 
-                        <div>
-                            <p>Thế giới nể phục Napoleon vì tốc độ nhưng lịch sử Việt Nam có Quang Trung</p>
-                            <p>Ông được xem là một trong những vị tướng và nhà quân sự kiệt xuất nhất lịch sử Việt Nam</p>
-                            <p>Quang Trung chứng minh rằng sức mạnh không nằm ở số lượng, nó nằm ở tốc độ và tinh thần quyết tử của một dân tập không biết cúi đầu.</p>
-                            <p>Ông dạy chúng ta rằng, thời cơ không tự đến, thời cơ là do chính chúng ta tạo ra bằng tốc độ và lòng dũng cảm</p>                    
+                    <div class="d-flex stick-scroll"> 
+                        <div class="fadeI d-flex center">
+                            <p>
+                                Nhận được cầu cứu, vua Càn Long coi đây là kho báu để mở rộng ảnh hưởng của mình xuống phương Nam
+                                Một đạo quân viễn chinh gồm 29 vạn quân Thanh do Tôn Sĩ Nghị chỉ huy tiến vào Đại Việt với ý muốn thôn tính nước ta 
+                            </p>
+                        </div>
+                        <div class="width2 moveLeft">
+                            <img src="image-albums/life-QT/giacthanh.jpg">
+                        </div>                                                  
+                    </div>
+
+                    <div class="d-flex center">
+                        <div class="fadeI">
+                            <p>
+                               Cuối năm 1788, quân Thanh vượt biên giới, nhanh chóng chiếm được Thăng Long
+                               Tôn Nghị Sĩ chủ quan, ngạo mạn cho tuyên bố sẽ ăn Tết tại Thăng Long
+                            </P>
                         </div>
                     </div>
                     
-                    <div class="qt-achievement">
-                        <div>
-                            <p>Có nhiều dự định cải cách về giáo dục, kinh tế và quản lý đất nước nhằm xây dựng một quốc gia hùng mạnh</p>
-                            <p>Cuối năm 1788, Nguyễn Huệ lên ngôi Hoàng đế tại Phú Xuân, lấy niên hiệu Quang Trung, trực tiếp lãnh đạo cuộc kháng chiến chống quân Thanh</p>
+                    <div class="d-flex-col center">
+                        <div class="width3 revealLRUD">
+                            <img src="image-albums/life-QT/nguyenhuelenngoi.jpg" alt="Nguyễn Huệ lên ngôi">
                         </div>
+                        <div class="fadeI">
+                            <p>
+                                Khi nhận được tin quân Thanh xâm lược. Ngày 22 tháng 12 năm 1788, Nguyễn Huệ lên ngôi Hoàng đế tại Phú Xuân, lấy niên hiệu Quang Trung
+                                Chỉ chờ có thế, Quang Trung phát động cuộc Bắc tiến thần tốc, tuyển thêm quân, tổ chức lại lực lượng trực tiếp chỉ huy chiến dịch, chuẩn bị đánh luôn cho nóng
+                            </p>
+                        </div>    
+                    </div>
 
-                        <div>
-                            <img src="image-albums/life-qt/vuaqt.jpg" alt="Hoàng đế Quang Trung">                      
+                    <div class="d-flex center stick-scroll">
+                        <div class="width2 revealLRUD">
+                            <img src="image-albums/life-QT/hanhquan.jpg">
+                        </div>
+                        <div class="fadeI center d-flex">
+                            <p>
+                                Từ Phú Xuân ra Bắc Hà, ông cho lính vừa đi vừa nghỉ trên võng thay phiên nhau khiêng để quân 
+                                đội không bao giờ dừng lại. Đó không chỉ là sức lực, đó là sự đỉnh cao của tổ chức và kỳ lực thép. 
+                                Đánh cho để dài tóc, đánh cho để đen răng, lời hịch của ông là tiếng sấm báo hiệu sự diệt vong cho kẻ thù 
+                            </P>                      
                         </div>
                     </div>
-                </div>
 
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI center d-flex-col">
+                            <h2>Trận Ngọc Hồi (1789)</h2>
+                            <p>
+                                Tại Ngọc Hồi, quân Thanh xây dựng hệ thống phòng thủ kiên cố với nhiều lớp lũy. Quang Trung đã sáng tạo sử dụng những tấm khiên lớn bọc rơm ướt để chống lại hỏa lực của đối phương. 
+                                Quân Tây Sơn vừa tiến lên vừa che chắn, phá vỡ tuyến phòng thủ và xông thẳng vào trận địa địch. Trước sức tấn công mãnh liệt, quân Thanh nhanh chóng tan rã.
+                            </p>
+                        </div>
+                        <div class="width2 moveLeft">
+                            <img src="image-albums/life-QT/ngochoi.jpg">
+                        </div>
+                    </div> 
+
+                    <div class="d-flex stick-scroll">
+                        <div class="fadeI center d-flex-col">
+                            <h2>Trận Đống Đa (1789)</h2>
+                            <p>
+                                Cùng lúc đó, tại Đống Đa, một cánh quân Tây Sơn khác bất ngờ đánh thẳng vào lực lượng chủ lực của quân Thanh. 
+                                Bị tấn công từ nhiều hướng, quân Thanh rơi vào hỗn loạn. Nhiều tướng lĩnh bị tiêu diệt, trong đó có Sầm Nghi Đống.
+                            </p>
+                        </div>
+                        <div class="width2 moveLeft">
+                            <img src="image-albums/life-QT/dongda.jpg">
+                        </div>
+                    </div>
+
+                    <div class="fadeI">   
+                        <p>
+                           Nghe tin các phòng tuyến bị phá vỡ, Tôn Sĩ Nghị hoảng loạn bỏ chạy qua sông Hồng rồi tháo chạy về Trung Quốc. 
+                           Quân Thanh tan tác, nhiều binh sĩ bị tiêu diệt hoặc chết trong lúc tháo chạy.
+                        </p>
+                        <p>
+                            Chỉ trong khoảng năm ngày từ đêm 30 Tết đến mùng 5 Tết, vua Quang Trung đã quét sạch quân Thanh ra khỏi bờ cõi.
+                            Đây là một trong những cuộc phản công thần tốc và vẻ vang nhất trong lịch sử quân sự Việt Nam
+                        </p>
+                        <p>
+                            Chiến thắng Ngọc Hồi - Đống Đa năm 1789 không chỉ bảo vệ nền độc lập dân tộc mà còn khẳng định tài năng quân sự kiệt xuất của vua Quang Trung.
+                             Chiến thắng ấy trở thành biểu tượng của ý chí quật cường, tinh thần yêu nước và khát vọng tự chủ của dân tộc Việt Nam.
+                        </p>
+                    </div>
+                </div>
+                
                 <div class="chapter-divider">
-                    <span class="decorate">✦</span>
-                    <span class="chapter-number">CHƯƠNG IV</span>
-                    <h2>DẤU ẤN ĐỂ LẠI</h2>
+                    <span class="decorate revealLR">✦</span>
+                    <h2 class="revealLR">DẤU ẤN ĐỂ LẠI</h2>
                 </div>
-
-                <div class="qt-worship">
-                    <div class="qt-content-worship">
-                        <p>Ông ra đi khi tham vọng canh tân đất nước toàn giang rở, để lại niềm tiếc núi khôn ngôi cho lịch sử</p>
-                        <p>Những ngọn lửa từ áo vải cờ đào vẫn luôn giựt cháy trong tim mỗi người Việt</p>
-                        <p>Được nhân dân tôn kính, thờ phụng tại nhiều di tích lịch sử, tiêu biểu như Bảo tàng Quang Trung và Đền thờ Tây Sơn Tam Kiệt</p>
+                
+                <div class="hero-life gap50 d-flex-col">
+                    <div class="d-flex">
+                        <div class="fadeI center d-flex">
+                            <p>
+                                Ông ra đi khi tham vọng canh tân đất nước còn dang dở
+                                Nhưng ngọn lửa từ áo vải cờ đào vẫn luôn giựt cháy trong tim mỗi người Việt
+                            </p>
+                        </div>
+                        <div class="width">
+                            <img src="image-albums/life-QT/tuongQT.jpg" alt="Tượng Quang Trung">
+                        </div>
                     </div>
 
-                    <div class="qt-worship-img">
-                        <div>
-                            <img src="image-albums/life-QT/thoQT.jpg" alt="Thờ Quang Trung">
+                    <div class="d-flex">
+                        <div class="fadeI center d-flex">
+                            <p>
+                                Ông được nhân dân tôn kính, thờ phụng tại nhiều di tích lịch sử, tiêu biểu như Bảo tàng Quang Trung và Đền thờ Tây Sơn Tam Kiệt
+                            </p>
                         </div>
-
-                        <div>
-                            <img src="image-albums/life-QT/tuongQT.jpg" alt="Tượng Quang Trung">
-                        </div>                        
-                    </div>                  
+                        <div class="width">
+                            <img src="image-albums/life-QT/thoQT.jpg" alt="Tượng Quang Trun">
+                        </div>
+                        
+                    </div>
+                    <div class="d-flex center">
+                        <p class="blockquote width3">
+                            Quang Trung dạy chúng ta rằng "Thời cơ không tự đến
+                            thời cơ là do chính chúng ta tạo ra bằng tốc độ và lòng dũng cảm"
+                        </p>                       
+                    </div>                                                                
                 </div>
 
-                <div class="qt-endcontent">
-                    <blockquote>
-                         Trong cuộc chơi của cuộc đời, kẻ nhanh hơn và quyết đoán hơn luôn là kẻ chiến thắng
-                    </blockquote>
-                </div>
             </section>
         </div>
-        
-            
-        
 
 
 
 
 
+
+    <div id="footer">
+        <h2>Lê Đức Bảo Anh & Vi Tuấn Kiệt</h2>
+        <h2>DH11TT03E</h2>
+    </div>
     </main>
-    <script src="gsap.min.js" defer></script>
-    <script src="ScrollTrigger.min.js" defer></script>
-    <script src="script.js" defer></script>
 </body>
-
 </html>

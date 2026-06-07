@@ -1,36 +1,73 @@
+/*==============================================================================================
+                                          FONT
+================================================================================================*/
 @font-face {
   font-family: 'ThuPhap';
   src: url('./font/ThuPhap.otf') format('opentype');
 }
+
 @font-face {
   font-family: 'SVN';
   src: url('./font/SVN.otf') format('opentype');
 }
+
 @font-face {
   font-family: 'DocLap';
   src: url('./font/DocLap.otf') format('opentype');
 }
+
 @font-face {
   font-family: 'UTM';
   src: url('./font/UTM-Brushtip-C.otf') format('opentype');
 }
+
 @font-face {
   font-family: 'ThuPhapTA';
   src: url('./font/UTM-ThuPhap-ThienAn.otf') format('opentype');
 }
+
+/*==============================================================================================
+                                       COLORS + HIGHLIGHT
+================================================================================================*/
+.highlight {
+  font-weight: 600;
+}
+.gold{
+  color:gold;
+}
+.crimson{
+  color:crimson;
+}
+.river{
+  color:#8AAEBF;
+}
+.brown{
+  color: #C2A16A;
+}
+.copper-gold{
+  color: #B8860B;
+}
+
+/*==============================================================================================
+                                       MAIN
+================================================================================================*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  max-width: 100%;
-  height: 100vh;
+html {
+  scroll-snap-type:y proximity;
+  scroll-behavior: smooth;
 }
 
-html{
-  scroll-behavior: smooth;
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 100vh;
+  flex:1;
 }
 
 body.lock {
@@ -51,27 +88,37 @@ img {
 
 #bg {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
 }
 
+#footer{
+  background: linear-gradient(135deg,#4a0f0f,#1a1a1a,#B8860B);
+  color: #e8dcc8;
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
+/*==============================================================================================
+                                       TRANG ĐẦU
+================================================================================================*/
 #book-intro {
   perspective: 1500px;
   position: relative;
   width: 100%;
   height: 100%;
   z-index: 1;
-  overflow: hidden;
+  overflow:hidden;
 }
-body:has(#main-contents.show) #book-intro{
-  opacity:0;
-  pointer-events:none;
+
+body:has(#main-contents.show) #book-intro {
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 5s ease;
 }
+
 #cover {
   position: absolute;
   top: 0;
@@ -134,30 +181,8 @@ body:has(#main-contents.show) #book-intro{
 #page-two.move {
   animation: move 1s ease-in-out forwards;
 }
-
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(50%);
-  }
-}
-
 .page.flip {
   animation: moveAndFlip 1s ease-in-out forwards;
-}
-
-@keyframes moveAndFlip {
-  0% {
-    transform: translateX(0) rotateY(0deg);
-  }
-
-
-
-  100% {
-    transform: translateX(50%) rotateY(-180deg);
-  }
 }
 
 #discover-now-btn {
@@ -194,12 +219,6 @@ body:has(#main-contents.show) #book-intro{
 
 }
 
-
-#cover.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .resize-cover {
   position: relative;
   cursor: pointer;
@@ -222,11 +241,7 @@ body:has(#main-contents.show) #book-intro{
   animation-delay: 1s;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+
 
 .floating,
 .floating2 {
@@ -247,32 +262,11 @@ body:has(#main-contents.show) #book-intro{
   left: 19%;
   width: 180px;
   animation: fadeIn 3s ease forwards, float2 9s ease-in-out infinite alternate;
-  animation-delay: 3s, 1s;
+  animation-delay: 3s, 2s;
 }
 
-@keyframes float {
 
-  0%,
-  100% {
-    transform: translateY(0px) rotate(2deg);
-  }
 
-  50% {
-    transform: translateY(-10px) rotate(-2deg);
-  }
-}
-
-@keyframes float2 {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(3deg);
-  }
-
-  50% {
-    transform: translateY(5px) rotate(0deg);
-  }
-}
 
 #intro-text {
   position: absolute;
@@ -297,21 +291,9 @@ body:has(#main-contents.show) #book-intro{
   color: #222;
 }
 
-.to-gold {
-  animation: toGold 5s ease forwards;
-}
 
-@keyframes toGold {
-  from {
-    color: #222;
-    text-shadow: none;
-  }
 
-  to {
-    color: #ffd700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, .7), 0 0 20px rgba(255, 215, 0, .5);
-  }
-}
+
 
 #bookLight {
   position: fixed;
@@ -332,31 +314,7 @@ body:has(#main-contents.show) #book-intro{
   animation: bookGlow 1.6s ease forwards;
 }
 
-@keyframes bookGlow {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
 
-  20% {
-    width: 120px;
-    height: 120px;
-    opacity: 0.7;
-  }
-
-  50% {
-    width: 600px;
-    height: 600px;
-    opacity: 0.95;
-  }
-
-  100% {
-    width: 5000px;
-    height: 5000px;
-    opacity: 1;
-  }
-}
 
 
 
@@ -365,13 +323,11 @@ body:has(#main-contents.show) #book-intro{
                                   TRANG CHÍNH
 ====================================================================================*/
 
-
 #main-contents {
   position: absolute;
   inset: 0;
   min-height: 100vh;
   opacity: 0;
-
 }
 
 .main-bg {
@@ -413,89 +369,223 @@ body:has(#main-contents.show) #book-intro{
 }
 
 .introduction {
-  scroll-snap-align: end;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity:0;
-  margin-top:25px;
-  width:fit-content;
+  opacity: 0;
+  margin-top: 25px;
+  width: fit-content;
 }
-.introduction p{
+
+.introduction p {
   font-family: 'DocLap';
   font-size: 55px;
   font-weight: 600;
 }
-.sub-intro{
-  opacity:0;
+
+.sub-intro {
+  opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.sub-intro p{
-  font-family:sans-serif;
+
+.sub-intro p {
+  font-family: sans-serif;
   font-size: 24px;
   font-weight: 100;
   text-indent: 40px;
   margin-bottom: 20px;
-  width:90%;
+  width: 90%;
 }
-#font-change{
-  font-family:'UTM';
+
+#timeline {
+  position: relative;
+  margin: 50px auto;
+  width: 1000px;
+}
+
+#time-title {
+  padding: 20px;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'DocLap';
+  font-size: 55px;
+  font-weight: bold;
+}
+
+#timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: black;
+  top: 13%;
+  bottom: 20%;
+  left: 50%;
+  margin-left: 0px;
+}
+
+.box-time {
+  position: relative;
+}
+
+.box-time::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -15px;
+  background: black;
+  border: 4px solid orange;
+  border-radius: 50%;
+  top: 0px;
+  z-index: 1;
+  box-shadow: 0 5px 5px;
+
+}
+
+.left {
+  left: 10%;
+  width: 400px;
+  padding: 10px 10px;
+}
+
+
+
+
+
+.right {
+  left: 50%;
+  width: 400px;
+  padding: 10px 40px;
+}
+
+.left::before {
+  content: "";
+  height: 0;
+  position: absolute;
+  top: 10px;
+  width: 0;
+  z-index: 1;
+  right: 20px;
+  border: medium solid black;
+  border-width: 10px 0px 10px 10px;
+  border-color: transparent transparent transparent black;
+}
+
+.right::before {
+  content: "";
+  height: 0;
+  position: absolute;
+  top: 10px;
+  width: 0;
+  z-index: 1;
+  left: 20px;
+  border: 1px solid black;
+  border-width: 10px 10px 10px 0px;
+  border-color: transparent black transparent transparent;
+}
+
+.right::after {
+  left: -15px;
+}
+.inner-content p {
+    color: black;
+    margin-left: 25px;
+    font-family: 'ThuPhapTA';
+    font-size: 35px;
+    text-decoration: none;
+    width: 300px;
+  }
+
+  .inner-content h2 {
+    font-family: 'UTM';
+    font-size: 25px;
+    height: 40px;
+    margin-left: 5px;
+  }
+
+  .inner-content {
+    padding: 35px 40px;
+    width: 350px;
+    height: 200px;
+    position: relative;
+    border-radius: 6px;
+    background-image: url('image-albums/thanhchi.png');
+    background-size: cover;
+    background-position: center;
+    transition: 0.25s;
+  }
+.inner-content:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.25s;
+}
+
+#font-change {
+  font-family: 'UTM';
   font-weight: 600;
 }
+
 #main-contents.show .introduction {
   animation: fadeIn 2s ease forwards;
-  animation-delay: 2s; /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
+  animation-delay: 2s;
+  /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
 }
 
 #main-contents.show .sub-intro {
   animation: fadeIn 1s ease forwards;
-  animation-delay: 3.5s; /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
+  animation-delay: 3.5s;
+  /* Đợi hình nền trang 2 hiện lên mượt mà tầm 0.8 giây rồi chữ mới bắt đầu hiện ra */
 }
 
-.generals-container  {
+.generals-container {
+  scroll-snap-align: start;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
   margin: 0px 0 50px 0;
   min-height: 100vh;
-  scroll-snap-align: center;
 }
 
-.general-card {
-    width:250px; 
-    height:500px;
-    background:rgba(30,20,10,0.75);
-    border:1px solid rgba(212,168,83,0.25);
-    border-radius:10px; 
-    text-align:center;
-    position:relative;
-    overflow: hidden;
-    transition:transform 0.4s ease, box-shadow 0.4s ease,
-                background 0.4s ease, border-color 0.4s ease;
-    cursor:pointer;
+.generals-container a {
+  text-decoration: none;
 }
 
-.general-card:hover {
+.inner-card{
+  width: 250px;
+  height: 500px;
+  background: rgba(30, 20, 10, 0.75);
+  border: 1px solid rgba(212, 168, 83, 0.25);
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.inner-card:hover {
   transform: translateY(-12px) !important;
   background: rgb(0, 0, 0);
   border: 1px solid rgba(190, 20, 20, 0.6);
   box-shadow: 0 8px 16px 10px rgba(190, 20, 20, 0.6);
 }
 
-.general-card img {
-  width: 100%; 
+.inner-card img {
+  width: 100%;
   height: 80%;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
-.general-card:hover img { transform: scale(1.05); }
 
-.general-card h2 {
+.inner-card:hover img {
+  transform: scale(1.05);
+}
+
+.inner-card h2 {
+  padding-top:10px;
   color: rgb(176, 138, 78);
   font-size: 35px;
   display: flex;
@@ -504,798 +594,285 @@ body:has(#main-contents.show) #book-intro{
   transition: color 0.5s;
   font-family: 'ThuPhapTA';
 }
-.general-card:hover h2 { color: #ffbf00; }
+
+.inner-card:hover h2 {
+  color: #ffbf00;
+}
+
+.hero-desc{
+  position:absolute;
+  bottom:90px;
+  padding:15px;
+  color:white;
+  font-family: 'SVN';
+  letter-spacing: 0.3px;
+  font-size:26px;
+  background:rgba(0, 0, 0, 0.669);
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.5s;
+}
+
+.inner-card:hover .hero-desc{
+  opacity:1;
+  transform:translateY(0);
+}
 
 .legend-intro {
+  scroll-snap-align: start;
   padding: 100px 40px;
   min-height: 100vh;
   margin: 0 auto;
   text-align: center;
-  scroll-snap-align: center;
 }
 
-.legend-intro-content { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 28px; 
-  
+.legend-intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
 }
 
 .legend-line {
+  opacity: 0;
   line-height: 1.85;
   color: rgb(0, 0, 0);
   font-size: 30px;
-  transform: translateY(25px);
 }
 
-.chapter-divider{
-  min-height: 100vh;
+.chapter-divider {
+  margin:200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
 }
 
-.chapter-number{
-    display: block;
-    margin-top: 15px;
-    font-size: 17px;
-    letter-spacing: 8px;
-    color:#8b949e;
+.chapter-divider h2 {
+  margin-top: 20px;
+  font-size: 70px;
+  letter-spacing: 6px;
+  color: #2b1d0e;
 }
 
-.chapter-divider h2{
-    margin-top: 20px;
-    font-size: 70px;
-    letter-spacing:6px;
-    color:#2b1d0e;
+.chapter-divider {
+  text-align: center;
 }
 
-.chapter-divider{
-    text-align:center;
-}
-
-.decorate{
-    position:relative;
-    font-size:24px;
-    color:#b08a4e;
+.decorate {
+  position: relative;
+  font-size: 24px;
+  color: #b08a4e;
 }
 
 .decorate::before,
-.decorate::after{
-    content:'';
-    position:absolute;
-    top:50%;
-    width:120px;
-    height:1px;
-    background:#b08a4e;
+.decorate::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 120px;
+  height: 1px;
+  background: #b08a4e;
 }
 
-.decorate::before{
-    right:40px;
+.decorate::before {
+  right: 40px;
 }
 
-.decorate::after{
-    left:40px;
-}
-
-.highlight{
-    font-weight: 600;
+.decorate::after {
+  left: 40px;
 }
 
 .hero {
-  margin: 50px 20px;
-}
-
-.nq-card, .nq-life-story, .nq-enemy, .nq-content-talent, .nq-achievement, .nq-worship,
-.dbl-card, .dbl-life-story, .dbl-enemy, .dbl-content-talent, .dbl-achievement, .dbl-worship,
-.thd-card, .thd-life-story, .thd-enemy, .thd-content-talent, .thd-achievement, .thd-worship,
-.qt-card, .qt-life-story, .qt-enemy, .qt-content-talent, .qt-achievement, .qt-worship  {
-  display: flex;
-  align-items: center;
-}
-
-#ngoquyen, #dinhbolinh, #tranhungdao, #nguyenhue {
-  margin: 50px 0;
-}
-
-#ngoquyen p, #dinhbolinh p, #tranhungdao p, #nguyenhue p {
+  margin: 10px 20px;
   font-size: 27px;
   line-height: 1.5;
-} 
-
-.nq-card {
-  justify-content: space-around;
+  font-family: sans-serif;
 }
 
-.nq-img {
-    height: 600px;
-    width: 300px;
+.d-flex{
+  display:flex;
 }
-
-.nq-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.nq-name {
-    font-family: 'ThuPhapTA';
-    font-size: 70px;
-    color: #d4a853;
-    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
-    margin-bottom: 15px;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.nq-birth {
-    font-family: 'SVN';
-    font-size: 30px;
-    color: #8b949e;
-    letter-spacing: 3px;
-    text-align: center;
-}
-
-.nq-life-story {
-  justify-content: space-between;
-
-}
-
-.nq-life-story img {
-  width: 650px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.nq-victory-story {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.nq-enemy {
-  justify-content: center;
-  gap: 50px;
-}
-
-.nq-enemy img {
-  width: 650px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.nq-battles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.nq-battles-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.nq-battles-info h2 {
-  font-size: 50px;
-}
-
-.nq-battles img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.nq-talent {
-  gap: 50px;
-}
-
-.nq-content-talent {
-  justify-content: center;
-  gap: 20px;
-}
-
-.nq-content-talent img {
-  width: 600px;
-  height: 600px;
-}
-
-.nq-achievement {
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.nq-achievement img {
-  width: 600px;
-  height: 500px;
-  object-fit: cover;
-}
-
-.nq-worship {
-  flex-direction: column;
-  justify-content: center;
-  gap: 50px;
-}
-
-.nq-worship img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-.nq-worship-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.nq-content-worship {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.d-flex-col{
+  display:flex;
   flex-direction: column;
 }
-
-.nq-endcontent {
-  display: flex;
-  justify-content: center;
+.center{
   align-items: center;
-  gap: 50px;
-  min-height: 100vh;
+  justify-content: center;
+}
+
+.top-center{
+  align-items: flex-start;
+  justify-content: center;
+}
+.gap50{
+  gap:50px;
+}
+.gap100{
+  gap:100px;
+}
+.stick-scroll{
   scroll-snap-align: center;
 }
 
-.nq-endcontent blockquote{
-    width: 70%;
-    text-align: center;
-    font-size: 42px;
-    line-height: 1.8;
-    font-style: italic;
-    color: #2b1d0e;
-}
-
-.dbl-card {
+.hero-card {
   justify-content: space-around;
-}
-
-.dbl-img {
-    height: 600px;
-    width: 300px;
-}
-
-.dbl-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.dbl-name {
-    font-family: 'ThuPhapTA';
-    font-size: 70px;
-    color: #d4a853;
-    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
-    margin-bottom: 15px;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.dbl-birth {
-    font-family: 'SVN';
-    font-size: 30px;
-    color: #8b949e;
-    letter-spacing: 3px;
-    text-align: center;
-}
-
-.dbl-life-story {
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.dbl-life-story img {
-  width: 900px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.dbl-victory-story {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.dbl-enemy {
-  justify-content: center;
-  gap: 50px;
-}
-
-.dbl-enemy img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.dbl-battles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.dbl-battles-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.dbl-battles-info h2 {
-  font-size: 50px;
-}
-
-.dbl-battles img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.dbl-talent {
-  gap: 50px;
-}
-
-.dbl-content-talent {
-  justify-content: center;
-  gap: 20px;
-}
-
-.dbl-content-talent img {
-  width: 700px;
-  height: 600px;
-}
-
-.dbl-achievement {
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.dbl-achievement img {
-  width: 600px;
-  height: 500px;
-  object-fit: cover;
-}
-
-.dbl-worship {
-  flex-direction: column;
-  justify-content: center;
-  gap: 50px;
-}
-
-.dbl-worship img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-.dbl-worship-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.dbl-content-worship {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.dbl-endcontent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  min-height: 100vh;
   scroll-snap-align: center;
 }
 
-.dbl-endcontent blockquote{
-    width: 70%;
-    text-align: center;
-    font-size: 42px;
-    line-height: 1.8;
-    font-style: italic;
-    color: #2b1d0e;
+.hero-img {
+  height: 600px;
+  width: 300px;
 }
 
-.thd-card {
-  justify-content: space-around;
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.thd-img {
-    height: 600px;
-    width: 300px;
+.hero-info{
+  margin-left: 100px;
+}
+.hero-name {
+  font-family: 'ThuPhapTA';
+  font-size: 70px;
+  text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.thd-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.birth-death {
+  font-family: 'SVN';
+  font-size: 35px;
+  font-weight: 600;
+  color: #414141;
+  letter-spacing: 3px;
+  text-align: center;
 }
 
-.thd-name {
-    font-family: 'ThuPhapTA';
-    font-size: 70px;
-    color: #d4a853;
-    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
-    margin-bottom: 15px;
-    white-space: nowrap;
-    text-align: center;
+.hero-life {
+  
+  margin:50px auto;
+}
+.hero-life p{
+  padding: 25px
 }
 
-.thd-birth {
-    font-family: 'SVN';
-    font-size: 30px;
-    color: #8b949e;
-    letter-spacing: 3px;
-    text-align: center;
+.width{
+  width:400px;
+  flex-shrink:0;
+}
+.width2{
+  width:720px;
+  flex-shrink:0;
+}
+.width3{
+  width:1290px;
+  flex-shrink:0;
+}
+.intro-hero{
+  margin-bottom: 50px;
+  padding:10px
 }
 
-.thd-life-story {
-  justify-content: space-between;
+.hero-legacy {
+  justify-content: center;
   gap: 50px;
 }
 
-.thd-life-story img {
+.hero-legacy img {
   width: 600px;
   height: 600px;
   object-fit: cover;
 }
 
-.thd-victory-story {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.thd-enemy {
-  justify-content: center;
-  gap: 50px;
-}
-
-.thd-enemy img {
-  width: 600px;
-  height: 500px;
-  object-fit: cover;
-}
-
-.thd-battles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.thd-battles-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.thd-battles-info h2 {
-  font-size: 50px;
-}
-
-.thd-battles img {
-  width: 800px;
-  height: 500px;
-  object-fit: cover;
-}
-
-.thd-talent {
-  gap: 50px;
-}
-
-.thd-content-talent {
-  justify-content: center;
-  gap: 20px;
-}
-
-.thd-content-talent img {
-  width: 600px;
-  height: 600px;
-}
-
-.thd-achievement {
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.thd-achievement img {
-  width: 600px;
-  height: 500px;
-  object-fit: cover;
-}
-
-.thd-worship {
-  flex-direction: column;
-  justify-content: center;
-  gap: 50px;
-}
-
-.thd-worship img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-.thd-worship-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.thd-endcontent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  min-height: 100vh;
-  scroll-snap-align: center;
-}
-
-.thd-endcontent blockquote{
-    width: 70%;
-    text-align: center;
-    font-size: 42px;
-    line-height: 1.8;
-    font-style: italic;
-    color: #2b1d0e;
-}
-
-.qt-card {
-  justify-content: space-around;
-}
-
-.qt-img {
-    height: 600px;
-    width: 300px;
-}
-
-.qt-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.qt-name {
-    font-family: 'ThuPhapTA';
-    font-size: 70px;
-    color: #d4a853;
-    text-shadow: 0 0 30px rgba(212, 168, 83, 0.3);
-    margin-bottom: 15px;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.qt-birth {
-    font-family: 'SVN';
-    font-size: 30px;
-    color: #8b949e;
-    letter-spacing: 3px;
-    text-align: center;
-}
-
-.qt-life-story {
-  justify-content: center;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.qt-life-story img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.qt-victory-story {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.qt-enemy {
-  justify-content: center;
-  gap: 50px;
-}
-
-.qt-enemy img {
-  width: 800px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.qt-battles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.qt-battles-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.qt-battles-info h2 {
-  font-size: 50px;
-}
-
-.qt-battles img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-
-.qt-talent {
-  gap: 50px;
-}
-
-.qt-content-talent {
-  justify-content: center;
-  gap: 20px;
-}
-
-.qt-content-talent img {
-  width: 600px;
-  height: 600px;
-}
-
-.qt-achievement {
-  justify-content: center;
-  margin: 50px 0;
-  gap: 20px;
-}
-
-.qt-achievement img {
-  width: 600px;
-  height: 500px;
-  object-fit: cover;
-}
-
-.qt-worship {
-  flex-direction: column;
-  justify-content: center;
-  gap: 50px;
-}
-
-.qt-worship img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
-}
-.qt-worship-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.qt-content-worship {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.qt-endcontent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  min-height: 100vh;
-  scroll-snap-align: center;
-}
-
-.qt-endcontent blockquote{
-    width: 70%;
-    text-align: center;
-    font-size: 42px;
-    line-height: 1.8;
-    font-style: italic;
-    color: #2b1d0e;
+.blockquote {
+  font-size: 42px;
+  line-height: 1.8;
+  font-style: italic;
+  color: #2b1d0e;
+  flex-shrink: 0;
 }
 
 .action-menu {
   position: fixed;
-  right: 1em; bottom: 1em;
+  right: 1em;
+  bottom: 1em;
   z-index: 2;
-  opacity:0;
+  opacity: 0;
   pointer-events: none;
 }
-body:has(#main-contents.show) .action-menu{
-  opacity:1;
-  pointer-events:auto;
+
+body:has(#main-contents.show) .action-menu {
+  opacity: 1;
+  pointer-events: auto;
   transition: 5s;
 }
-.action-menu > button {
-  width: 50px; 
+
+.action-menu>button {
+  width: 50px;
   height: 50px;
-  border: none; 
+  border: none;
   border-radius: 50%;
   background: #d4a853;
-  z-index: 1; 
+  z-index: 1;
   position: relative;
   transition: 0.3s;
   cursor: pointer;
   box-shadow: 0 15px 35px rgba(74, 74, 74, 0.4);
 }
 
-.action-menu > button:hover {
+.action-menu>button:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 28px rgba(99, 99, 99, 0.6);
 }
 
 .three-lines {
-  position: absolute; 
+  position: absolute;
   inset: 0;
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
-  gap: 5px; 
+  gap: 5px;
   pointer-events: none;
 }
 
 .three-lines .line {
-  width: 20px; height: 2px;
+  width: 20px;
+  height: 2px;
   background: #0d1117;
   border-radius: 2px;
   display: block;
   transition: 0.35s ease;
   transform-origin: center;
 }
-.action-menu.active ~ #main-contents.show{
+
+.action-menu.active~#main-contents.show {
   opacity: 0.3;
   transition: 0.3s;
 }
-.action-menu.active .line:nth-child(1) { 
+
+.action-menu.active .line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .action-menu.active .line:nth-child(2) {
-  opacity: 0; 
-  transform: scaleX(0); 
+  opacity: 0;
+  transform: scaleX(0);
 }
-.action-menu.active .line:nth-child(3) { 
-  transform: translateY(-7px) rotate(-45deg); 
+
+.action-menu.active .line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .action-menu-btns {
   position: absolute;
   bottom: 62px;
   right: 0;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   gap: 10px;
   pointer-events: none;
@@ -1303,9 +880,11 @@ body:has(#main-contents.show) .action-menu{
   transform: translateY(12px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .action-menu.active .action-menu-btns {
   pointer-events: all;
-  opacity: 1; transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .btn {
@@ -1318,10 +897,30 @@ body:has(#main-contents.show) .action-menu{
   transform: translateX(14px);
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
-.action-menu.active .btn:nth-child(1) { opacity:1; transform:translateX(0); transition-delay:0.04s; }
-.action-menu.active .btn:nth-child(2) { opacity:1; transform:translateX(0); transition-delay:0.09s; }
-.action-menu.active .btn:nth-child(3) { opacity:1; transform:translateX(0); transition-delay:0.14s; }
-.action-menu.active .btn:nth-child(4) { opacity:1; transform:translateX(0); transition-delay:0.19s; }
+
+.action-menu.active .btn:nth-child(1) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.04s;
+}
+
+.action-menu.active .btn:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.09s;
+}
+
+.action-menu.active .btn:nth-child(3) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.14s;
+}
+
+.action-menu.active .btn:nth-child(4) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.19s;
+}
 
 .btn span {
   padding: 5px 12px;
@@ -1329,35 +928,238 @@ body:has(#main-contents.show) .action-menu{
   border-radius: 20px;
   white-space: nowrap;
   color: #e8dcc8;
-  background: rgba(13,17,23,0.88);
-  border: 1px solid rgba(212,168,83,0.28);
+  background: rgba(13, 17, 23, 0.88);
+  border: 1px solid rgba(212, 168, 83, 0.28);
   backdrop-filter: blur(8px);
   transition: 0.25s;
 }
-.btn:hover span { 
+
+.btn:hover span {
   background: #ea9c00;
-  color: #0d1117; 
+  color: #0d1117;
   transform: scale(1.1);
   font-size: 17px;
   transition: 0.2s;
 }
 
 .btn button {
-  width: 42px; height: 42px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(212,168,83,0.28);
+  border: 1px solid rgba(212, 168, 83, 0.28);
   background: #111820;
-  cursor: pointer; overflow: hidden; padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
 }
+
 .btn button:hover {
   border-color: #d4a853;
-  box-shadow: 0 0 12px rgba(212,168,83,0.45);
+  box-shadow: 0 0 12px rgba(212, 168, 83, 0.45);
   transform: scale(1.1);
 }
+
 .btn button img {
-  width: 100%; height: 100%;
-  object-fit: cover; 
-  border-radius: 50%; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
+}
+
+
+/*==============================================================================================
+                                              ANIMATION
+================================================================================================*/
+.to-gold {
+  animation: toGold 5s ease forwards;
+}
+
+.moveLeft {
+  animation: moveL;
+  animation-timeline: view();
+}
+
+.moveRight {
+  animation: moveR;
+  animation-timeline: view();
+}
+
+.fadeI{
+  text-indent: 3em;
+  opacity:0;
+  animation: fadeIn;
+  animation-timeline:view(); 
+}
+
+.revealU{
+  animation: rU;
+  animation-timeline:view();
+}
+.revealD{
+  animation: rD;
+  animation-timeline:view();
+}
+.revealL{
+  animation: rL;
+  animation-timeline:view();
+}
+.revealR{
+  animation: rR;
+  animation-timeline:view();
+}
+.revealLR{
+  animation: rLR;
+  animation-timeline:view();
+}
+.revealLRUD{
+  animation:rLRUD;
+  animation-timeline:view();
+}
+/*==============================================================================================
+                                          ANIMATION @KEYFRAMES
+================================================================================================*/
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes moveAndFlip {
+  0% {
+    transform: translateX(0) rotateY(0deg);
+  }
+  100% {
+    transform: translateX(50%) rotateY(-180deg);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(0deg);
+  }
+}
+
+@keyframes toGold {
+  from {
+    color: #222;
+  }
+  to {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, .7), 0 0 20px rgba(255, 215, 0, .5);
+  }
+}
+
+@keyframes bookGlow {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  20% {
+    width: 120px;
+    height: 120px;
+    opacity: 0.7;
+  }
+  50% {
+    width: 600px;
+    height: 600px;
+    opacity: 0.95;
+  }
+  100% {
+    width: 5000px;
+    height: 5000px;
+    opacity: 1;
+  }
+}
+
+@keyframes moveL {
+  0% {
+    transform: translateX(50%);
+  }
+  30% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveR {
+  0% {
+    transform: translateX(-50%);
+  }
+  30% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rU{
+  0%{
+    clip-path: inset(100% 0 0 0);
+  }
+  50%{
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes rD{
+  0%{
+    clip-path: inset(0 0 100% 0);
+  }
+  50%{
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes rL{
+  10%{
+    clip-path: inset(0 0 0 100%);
+  }
+  50%{
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes rR{
+  10%{
+    clip-path: inset(0 100% 0 0);
+  }
+  50%{
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes rLR{
+  0%{
+    clip-path: inset(0 100% 0 100%);
+  }
+  30%{
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes rLRUD{
+  20%{
+    clip-path: inset(50% 50% 50% 50%);
+  }
+  50%{
+    clip-path: inset(0 0 0 0);
+  }
 }
