@@ -1,4 +1,4 @@
-const $ = e => document.querySelector(e); //Hàm rút gọn
+const $ = x => document.querySelector(x); //Hàm rút gọn
 
 const btn = $("#discover-now-btn");
 const page = $(".page");
@@ -38,7 +38,7 @@ function typingEffect() {
 
 
 /* ==============================================================================================|
-                                    Page States                                                  |
+                                    Page                                                  |
 =================================================================================================*/
 function openMainPage() {
     btn.classList.add("disappear");
@@ -59,22 +59,9 @@ function openMainPage() {
 }
 
 
-/*
-function resetPage() {
-    btn.classList.remove("disappear");
-    text.classList.remove("disappear");
-    page2.classList.remove("move");
-    page.classList.remove("flip");
-    light.classList.remove("active");
-    main.classList.remove("show");
-    document.body.classList.add("lock");
-    document.body.classList.remove("reading");
-}
-*/
-
 
 /* ====================================================================================
-                                    First Load                                         |
+                                    Khi mở page                                        |
 ======================================================================================= */
 
 if (location.hash === "#main") {
@@ -87,7 +74,7 @@ if (location.hash === "#main") {
 
 
 /* ======================================================================================
-                                       Button                                            |
+                                       Button Khám phá ngay                                         |
 ========================================================================================= */
 
 
@@ -96,19 +83,6 @@ btn.onclick = () => {
     openMainPage();
 };
 
-
-
-/* ===========================================================================================
-                                     Back / Forward                                           |
-============================================================================================== */
-
-window.onpopstate = () => {
-    if (location.hash === "#main") {
-        openMainPage();
-    } else {
-        resetPage();
-    }
-};
 
 
 /* =============================================================================================
